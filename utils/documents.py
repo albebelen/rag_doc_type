@@ -1,4 +1,5 @@
 import yaml
+from langchain_core.documents import Document
 
 # Tell PyYAML to use block scalars (|) for multiline strings for ultimate readability
 def str_presenter(dumper, data):
@@ -48,9 +49,15 @@ def make_chunking_document_aware(chunking_function):
     OR lists of LangChain Documents, upgrading it  to accept LangChain Documents, tracking and merging 
     metadata automatically and with any metadata the chunking function itself generated.
     """
-    from langchain_core.documents import Document
-
     def wrapper(docs, *args, **kwargs):
+        if isinstance(docs, str):
+            return chunking_function(docs, *args, **kwargs)
+
+        if hasattr(docs, 'page_content') and hasattr(docs, 'metadata'):
+            docs = [docs]
+        elif isinstance(docs, (list, tuple)) and docs and all(isinstance(item, str) for item in docs):
+            docs = [Document(page_content=item, metadata={}) for item in docs]
+
         # Flatten the text and record spans
         full_text = ""
         doc_spans = [] 
