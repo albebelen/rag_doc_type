@@ -38,6 +38,7 @@ dependencies = [
     "ragas>=0.4.3",
     "rank-bm25>=0.2.2",
     "rapidfuzz>=3.14.5",
+    "seaborn>=0.13.2",
     "sentence-transformers>=5.4.1",
     "tabulate>=0.10.0",
     "torch>=2.11.0",
