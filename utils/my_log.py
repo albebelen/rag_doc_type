@@ -1,5 +1,6 @@
 import logging
 from pathlib import Path
+from datetime import datetime
 from tqdm import tqdm
 import contextvars
 from contextlib import contextmanager, asynccontextmanager
@@ -55,7 +56,8 @@ class MDCFormatter(logging.Formatter):
 # Setup Logging
 log_dir = Path(__file__).resolve().parent.parent / "logs"
 log_dir.mkdir(exist_ok=True)
-log_file = log_dir / "app.log"
+run_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
+log_file = log_dir / f"app_{run_timestamp}.log"
 
 handler = TqdmStreamHandler()
 handler.setFormatter(MDCFormatter('%(asctime)s | %(levelname)s%(mdc)s | %(message)s'))
