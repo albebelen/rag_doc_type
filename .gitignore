@@ -12,6 +12,8 @@ cleaned_docs_cache/**
 chunking/.DS_Store 
 utils/generate_image.py
 test/*/*.csv
+graphs/
+results/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
