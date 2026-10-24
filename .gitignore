@@ -14,6 +14,7 @@ utils/generate_image.py
 test/*/*.csv
 graphs/
 results/
+**/.DS_Store
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
