@@ -1,0 +1,120 @@
+- id: "q_001"
+  test_set: 1
+  answer_type: "short"
+  difficulty: "easy"
+  question: "Quali sono le misurazioni fisiche (altezza e peso) di Zlatan Ibrahimović indicate nell'infografica?"
+  answer: "Zlatan Ibrahimović è alto 195 cm e pesa 95 kg."
+  ground_truth: "L'infografica riporta per Zlatan Ibrahimović un'altezza di 195 CM e un peso di 95 KG."
+  article_refs: ["Infografica Zlatan Ibrahimovic 11/12", "Scheda Dati Fisici"]
+  contexts:
+    - "PAESE: SVEZIA | ALTEZZA: 195 CM | PESO: 95 KG"
+  adversarial: false
+
+- id: "q_002"
+  test_set: 1
+  answer_type: "medium"
+  difficulty: "easy"
+  question: "Quanti gol totali ha segnato Ibrahimović nella stagione 11/12 e come si dividono tra dentro e fuori area?"
+  answer: "Ha segnato 28 gol totali: 24 dentro l'area e 4 fuori area."
+  ground_truth: "L'infografica evidenzia 28 goal totali, suddivisi in 24 dentro l'area e 4 fuori area."
+  article_refs: ["Infografica Zlatan Ibrahimovic 11/12", "Statistiche Goal"]
+  contexts:
+    - "28 goal: 24 DENTRO L'AREA, 4 FUORI L'AREA"
+  adversarial: false
+
+- id: "q_003"
+  test_set: 1
+  answer_type: "short"
+  difficulty: "medium"
+  question: "Quanti passaggi completati e quanti assist ha registrato Ibrahimović secondo la grafica?"
+  answer: "Ha completato il 77% di 1.487 passaggi e ha realizzato 6 assist."
+  ground_truth: "La sezione sui passaggi mostra 1.487 PASSAGGI con il 77% COMPLETATI e 6 ASSIST."
+  article_refs: ["Infografica Zlatan Ibrahimovic 11/12", "Statistiche Passaggi"]
+  contexts:
+    - "1.487 PASSAGGI | 77% COMPLETATI | 80 SMARCANTI | 6 ASSIST"
+  adversarial: false
+
+- id: "q_004"
+  test_set: 1
+  answer_type: "medium"
+  difficulty: "medium"
+  question: "Quante volte Ibrahimović ha vinto il Guldbollen e quante di queste sono state consecutive?"
+  answer: "Ibrahimović ha vinto il Guldbollen per 6 volte, di cui 5 consecutive."
+  ground_truth: "Nel testo biografico si dichiara che è l'unico svedese ad aver vinto il Guldbollen per sei volte, di cui cinque consecutive."
+  article_refs: ["Infografica Zlatan Ibrahimovic 11/12", "Profilo Giocatore"]
+  contexts:
+    - "Considerato uno degli attaccanti più forti e completi al mondo, è l'unico svedese ad aver vinto il Guldbollen per sei volte, di cui cinque consecutive."
+  adversarial: false
+
+- id: "q_005"
+  test_set: 2
+  answer_type: "long"
+  difficulty: "hard"
+  question: "Fornisci un riepilogo dettagliato delle statistiche sui tiri di Ibrahimović (totali, nello specchio, percentuale di realizzazione e distribuzione dei gol per parte del corpo/piede)."
+  answer: "Ibrahimović ha effettuato 113 tiri totali, di cui 67 nello specchio, ottenendo una percentuale di realizzazione del 25%. Dei 28 gol totali, 22 sono stati segnati di destro (dx), 3 di sinistro (sx) e 3 di testa."
+  ground_truth: "TOT 113 TIRI, 67 NELLO SPECCHIO, 25% DI REALIZZAZIONE. Distribuzione gol: 22 dx (destro), 3 sx (sinistro), 3 testa."
+  article_refs: ["Infografica Zlatan Ibrahimovic 11/12", "Analisi Tiri e Gol"]
+  contexts:
+    - "TOT 113 TIRI | 67 NELLO SPECCHIO | 25% DI REALIZZAZIONE"
+    - "Mappa corpo/gol: 3 testa, 22 dx, 3 sx"
+  adversarial: false
+
+- id: "q_006"
+  test_set: 2
+  answer_type: "short"
+  difficulty: "medium"
+  question: "Qual era l'ingaggio stagionale di Ibrahimović all'Inter citato nel testo dell'infografica?"
+  answer: "L'ingaggio all'Inter era di 12 milioni di euro a stagione."
+  ground_truth: "Nel testo è specificato che quando militava nell'Inter aveva un ingaggio di 12 milioni di euro a stagione, rendendolo il calciatore più pagato del mondo."
+  article_refs: ["Infografica Zlatan Ibrahimovic 11/12", "Profilo Giocatore"]
+  contexts:
+    - "È stato inoltre, quando militava nell'Inter con un ingaggio di 12 milioni di euro a stagione, il calciatore più pagato del mondo."
+  adversarial: false
+
+- id: "q_007"
+  test_set: 2
+  answer_type: "medium"
+  difficulty: "hard"
+  question: "Quali sono i dati sulle presenze, i minuti giocati, i cartellini e la media minuti per gol riportati nella tabella in basso?"
+  answer: "Ha collezionato 32 presenze, 2.810 minuti giocati, 3 cartellini gialli, 1 cartellino rosso e una media di 1 gol ogni 100,36 minuti."
+  ground_truth: "Tabella riassuntiva: pres. 32, goal 28, cartellini gialli 3, cartellino rosso 1, minuti giocati 2810, 1 gol ogni 100.36 minuti."
+  article_refs: ["Infografica Zlatan Ibrahimovic 11/12", "Tabella Presenze e Disciplina"]
+  contexts:
+    - "pres. 32 | subentrato 3 | sostituito 0 | goal 28 | ammonizioni 3 | espulsioni 1 | minuti 2810 | 1 gol ogni 100.36"
+  adversarial: false
+
+- id: "q_008"
+  test_set: 2
+  answer_type: "short"
+  difficulty: "easy"
+  question: "Quali sono i dirigenti del Milan espressamente citati da Ibrahimović nella sua dichiarazione?"
+  answer: "I dirigenti citati sono il presidente Silvio Berlusconi e Adriano Galliani."
+  ground_truth: "Nel fumetto con la dichiarazione, Ibrahimović cita il presidente Silvio Berlusconi e Adriano Galliani."
+  article_refs: ["Infografica Zlatan Ibrahimovic 11/12", "Dichiarazione Ibrahimovic"]
+  contexts:
+    - "La società, in primis il presidente Silvio Berlusconi e Adriano Galliani, mi danno fiducia e responsabilità."
+  adversarial: false
+
+- id: "q_009"
+  test_set: 2
+  answer_type: "short"
+  difficulty: "medium"
+  question: "Quanti rigori ha segnato Ibrahimović secondo la grafica fornita?"
+  answer: "L'infografica non fornisce alcuna informazione o dato relativo ai rigori segnati."
+  ground_truth: "L'immagine contenente le statistiche di Ibrahimović non menziona in alcun punto i rigori."
+  article_refs: ["Infografica Zlatan Ibrahimovic 11/12"]
+  contexts:
+    - "L'infografica include dati su tiri, passaggi, contrasti, falli e minuti, ma non contiene statistiche relative ai calci di rigore."
+  adversarial: true
+
+- id: "q_010"
+  test_set: 2
+  answer_type: "medium"
+  difficulty: "hard"
+  question: "Qual è il dato sui palloni recuperati e la percentuale di contrasti vinti da Zlatan Ibrahimović?"
+  answer: "Ibrahimović ha recuperato 87 palloni e ha vinto il 61% dei 31 contrasti effettuati."
+  ground_truth: "L'infografica riporta 87 PALLONI RECUPERATI e CONTRASTI 31 VINTI 61%."
+  article_refs: ["Infografica Zlatan Ibrahimovic 11/12", "Statistiche Difensive e Duelli"]
+  contexts:
+    - "CONTRASTI 31 VINTI 61% | RESPINTE 44 | BLOCCHI 1 | PALLONI RECUPERATI 87"
+  adversarial: false
