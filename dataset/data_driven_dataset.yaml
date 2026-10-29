@@ -1,48 +1,171 @@
-- id: "q_001"
-  test_set: 1
-  answer_type: "short"
-  difficulty: "easy"
-  question: "What is the spectral type and visual magnitude (Vmag) of Proxima Centauri?"
-  answer: "Proxima Centauri (HIP 70890) has a visual magnitude (Vmag) of 11.01 and a spectral type of M5Ve."
-  ground_truth: "According to the dataset, Proxima Centauri (HIP 70890) is recorded with a Vmag of 11.01 and a Spectral Type of M5Ve."
-  article_refs: ["Nearest Stars Dataset", "Sheet1"]
+- id: ts8_short_01
+  test_set: 8
+  answer_type: short
+  difficulty: easy
+  question: >
+    What apparent magnitude (Vmag), absolute magnitude and spectral type are listed for Proxima Centauri?
+  answer: >
+    Proxima Centauri (HIP 70890) is listed with a Vmag of 11.01, an absolute magnitude of 15.45 and the spectral type M5Ve.
+  ground_truth: >
+    Proxima Centauri (HIP 70890) is listed with a Vmag of 11.01, an absolute magnitude of 15.45 and the spectral type M5Ve.
+  article_refs:
+  - Sheet1 - row 2 (HIP 70890, Proxima Centauri)
   contexts:
-    - "HIP: 70890, common name: Proxima Centauri, Vmag: 11.01, Abs Mag: 15.45, Distance (pc): 12948, B-V (mag): 1807.000, Spectral Type: M5Ve"
+  - nearest_stars.xlsx
   adversarial: false
 
-- id: "q_002"
-  test_set: 1
-  answer_type: "medium"
-  difficulty: "medium"
-  question: "Which star in the document has the lowest absolute magnitude (Abs Mag), and what are its recorded properties?"
-  answer: "Sirius A (HIP 32349) has the lowest absolute magnitude in the dataset at 1.45. Its visual magnitude (Vmag) is -1.44, distance is 26371 pc, B-V (mag) is 0.009, and its spectral type is A0m..."
-  ground_truth: "Sirius A (HIP 32349) features the lowest Abs Mag of 1.45, with Vmag -1.44, Distance (pc) 26371, B-V color index 0.009, and Spectral Type A0m..."
-  article_refs: ["Nearest Stars Dataset", "Sheet1"]
+- id: ts8_short_02
+  test_set: 8
+  answer_type: short
+  difficulty: easy
+  question: >
+    What HIP number and spectral type are listed for Barnard's Star?
+  answer: >
+    Barnard's Star has the HIP number 87937 and the spectral type sdM4.
+  ground_truth: >
+    Barnard's Star has the HIP number 87937 and the spectral type sdM4.
+  article_refs:
+  - Sheet1 - row 5 (HIP 87937, Barnard's Star)
   contexts:
-    - "HIP: 32349, common name: Sirius A, Vmag: -1.44, Abs Mag: 1.45, Distance (pc): 26371, B-V (mag): 0.009, Spectral Type: A0m..."
+  - nearest_stars.xlsx
   adversarial: false
 
-- id: "q_003"
-  test_set: 2
-  answer_type: "long"
-  difficulty: "hard"
-  question: "Compare the visual magnitude, absolute magnitude, distance, and spectral types of 61 Cygni A and 61 Cygni B based on the dataset."
-  answer: "61 Cygni A (HIP 104214) has a visual magnitude of 5.20, an absolute magnitude of 7.49, a distance of 34827 pc, a B-V of 1069.000, and a spectral type of K5V. In comparison, 61 Cygni B (HIP 104217) is fainter with a visual magnitude of 6.05, an absolute magnitude of 8.33, a distance of 35036 pc, a B-V of 1309.000, and a spectral type of K7V."
-  ground_truth: "61 Cygni A has HIP 104214, Vmag 5.20, Abs Mag 7.49, Distance 34827 pc, B-V 1069.000, Spectral Type K5V. 61 Cygni B has HIP 104217, Vmag 6.05, Abs Mag 8.33, Distance 35036 pc, B-V 1309.000, Spectral Type K7V."
-  article_refs: ["Nearest Stars Dataset", "Sheet1"]
+- id: ts8_short_03
+  test_set: 8
+  answer_type: short
+  difficulty: easy
+  question: >
+    What are the HIP number, apparent magnitude (Vmag) and spectral type of Altair?
+  answer: >
+    Altair has the HIP number 97649, a Vmag of 0.76 and the spectral type A7IV-V.
+  ground_truth: >
+    Altair has the HIP number 97649, a Vmag of 0.76 and the spectral type A7IV-V.
+  article_refs:
+  - Sheet1 - row 46 (HIP 97649, Altair)
   contexts:
-    - "HIP: 104214, common name: 61 Cygni A, Vmag: 5.20, Abs Mag: 7.49, Distance (pc): 34827, B-V (mag): 1069.000, Spectral Type: K5V"
-    - "HIP: 104217, common name: 61 Cygni B, Vmag: 6.05, Abs Mag: 8.33, Distance (pc): 35036, B-V (mag): 1309.000, Spectral Type: K7V"
+  - nearest_stars.xlsx
   adversarial: false
 
-- id: "q_004"
-  test_set: 2
-  answer_type: "short"
-  difficulty: "medium"
-  question: "What is the recorded distance and spectral type for Polaris in the nearest stars document?"
-  answer: "Polaris is not listed in the document."
-  ground_truth: "The provided nearest stars document contains no entry or information regarding Polaris."
-  article_refs: ["Nearest Stars Dataset", "Sheet1"]
+- id: ts8_short_04
+  test_set: 8
+  answer_type: short
+  difficulty: easy
+  question: >
+    Which star is listed under HIP 16537, and what are its Vmag and spectral type?
+  answer: >
+    HIP 16537 is listed as e Eridani, with a Vmag of 3.72 and the spectral type K2V.
+  ground_truth: >
+    HIP 16537 is listed as e Eridani, with a Vmag of 3.72 and the spectral type K2V.
+  article_refs:
+  - Sheet1 - row 9 (HIP 16537, e Eridani)
   contexts:
-    - "The dataset covers 25 stars near Earth, such as Proxima Centauri, Barnard's Star, Sirius A, and Ross 154, but does not contain an entry for Polaris."
-  adversarial: true
+  - nearest_stars.xlsx
+  adversarial: false
+
+- id: ts8_medium_01
+  test_set: 8
+  answer_type: medium
+  difficulty: medium
+  question: >
+    How do 61 Cygni A and 61 Cygni B compare in apparent magnitude, absolute magnitude and spectral type?
+  answer: >
+    61 Cygni A (HIP 104214) has a Vmag of 5.2, an absolute magnitude of 7.49 and the spectral type K5V, while 61 Cygni B (HIP 104217) has a Vmag of 6.05, an absolute magnitude of 8.33 and the spectral type K7V. Since lower magnitude values mean a brighter star, 61 Cygni A is brighter than 61 Cygni B in both apparent and absolute terms.
+  ground_truth: >
+    61 Cygni A (HIP 104214) has a Vmag of 5.2, an absolute magnitude of 7.49 and the spectral type K5V, while 61 Cygni B (HIP 104217) has a Vmag of 6.05, an absolute magnitude of 8.33 and the spectral type K7V. Since lower magnitude values mean a brighter star, 61 Cygni A is brighter than 61 Cygni B in both apparent and absolute terms.
+  article_refs:
+  - Sheet1 - row 12 (HIP 104214, 61 Cygni A)
+  - Sheet1 - row 14 (HIP 104217, 61 Cygni B)
+  contexts:
+  - nearest_stars.xlsx
+  adversarial: false
+
+- id: ts8_medium_02
+  test_set: 8
+  answer_type: medium
+  difficulty: medium
+  question: >
+    Which three stars in the list have the lowest apparent magnitude (Vmag) values, and what are those values?
+  answer: >
+    The three stars with the lowest Vmag values are Sirius A (HIP 32349) with -1.44, Rigel Kentaurus (HIP 71683) with -0.01, and Procyon (HIP 37279) with 0.4.
+  ground_truth: >
+    The three stars with the lowest Vmag values are Sirius A (HIP 32349) with -1.44, Rigel Kentaurus (HIP 71683) with -0.01, and Procyon (HIP 37279) with 0.4.
+  article_refs:
+  - Sheet1 - column Vmag, rows 2 to 101
+  - Sheet1 - row 7 (Sirius A)
+  - Sheet1 - row 4 (Rigel Kentaurus)
+  - Sheet1 - row 13 (Procyon)
+  contexts:
+  - nearest_stars.xlsx
+  adversarial: false
+
+- id: ts8_medium_03
+  test_set: 8
+  answer_type: medium
+  difficulty: medium
+  question: >
+    Which stars in the list have a spectral type that starts with the letter D, and what are their Vmag, absolute magnitude and B-V values?
+  answer: >
+    Two stars have a spectral type starting with D. van Maanen's Star (HIP 3829) has the spectral type DG, a Vmag of 12.37, an absolute magnitude of 14.15 and a B-V of 0.554. The star with HIP 57367, which has no common name, has the spectral type DC:, a Vmag of 11.5, an absolute magnitude of 13.18 and a B-V of 0.196.
+  ground_truth: >
+    Two stars have a spectral type starting with D. van Maanen's Star (HIP 3829) has the spectral type DG, a Vmag of 12.37, an absolute magnitude of 14.15 and a B-V of 0.554. The star with HIP 57367, which has no common name, has the spectral type DC:, a Vmag of 11.5, an absolute magnitude of 13.18 and a B-V of 0.196.
+  article_refs:
+  - Sheet1 - column Spectral Type, rows 2 to 101
+  - Sheet1 - row 30 (HIP 3829, van Maanen's Star)
+  - Sheet1 - row 35 (HIP 57367)
+  contexts:
+  - nearest_stars.xlsx
+  adversarial: false
+
+- id: ts8_long_01
+  test_set: 8
+  answer_type: long
+  difficulty: hard
+  question: >
+    Grouping the 100 stars by the first letter of their spectral type, how many fall into each class, which class is the most common, and how many stars have no spectral type listed?
+  answer: >
+    Of the 100 stars, 53 have a spectral type starting with M, 25 start with K, 8 start with G, 2 start with A, 2 start with D and 1 starts with F. One further star, Barnard's Star, has the subdwarf type sdM4, which would bring the M group to 54 if it is counted as an M star, and 8 stars have no spectral type listed. The M class is by far the most common.
+  ground_truth: >
+    Of the 100 stars, 53 have a spectral type starting with M, 25 start with K, 8 start with G, 2 start with A, 2 start with D and 1 starts with F. One further star, Barnard's Star, has the subdwarf type sdM4, which would bring the M group to 54 if it is counted as an M star, and 8 stars have no spectral type listed. The M class is by far the most common.
+  article_refs:
+  - Sheet1 - column Spectral Type, rows 2 to 101
+  contexts:
+  - nearest_stars.xlsx
+  adversarial: false
+
+- id: ts8_long_02
+  test_set: 8
+  answer_type: long
+  difficulty: hard
+  question: >
+    Which stars are the nearest and the farthest according to the Distance (pc) column, and which stars have the lowest and highest absolute magnitude, with their apparent magnitudes for comparison?
+  answer: >
+    The table is ordered from nearest to farthest by its Distance (pc) column. The nearest star is Proxima Centauri (HIP 70890), which has the smallest value in the column (12948), and the farthest is Ross 490 (HIP 65859), which has the largest (76266). By absolute magnitude, Sirius A has the lowest value (1.45), making it the intrinsically brightest star in the list, while Proxima Centauri has the highest (15.45), making it the intrinsically faintest, even though it is the nearest. Their apparent magnitudes show the same contrast, as Sirius A has a Vmag of -1.44 and Proxima Centauri has a Vmag of 11.01.
+  ground_truth: >
+    The table is ordered from nearest to farthest by its Distance (pc) column. The nearest star is Proxima Centauri (HIP 70890), which has the smallest value in the column (12948), and the farthest is Ross 490 (HIP 65859), which has the largest (76266). By absolute magnitude, Sirius A has the lowest value (1.45), making it the intrinsically brightest star in the list, while Proxima Centauri has the highest (15.45), making it the intrinsically faintest, even though it is the nearest. Their apparent magnitudes show the same contrast, as Sirius A has a Vmag of -1.44 and Proxima Centauri has a Vmag of 11.01.
+  article_refs:
+  - Sheet1 - column Distance (pc), rows 2 to 101
+  - Sheet1 - column Abs Mag, rows 2 to 101
+  - Sheet1 - row 2 (HIP 70890, Proxima Centauri)
+  - Sheet1 - row 7 (HIP 32349, Sirius A)
+  - Sheet1 - row 101 (HIP 65859, Ross 490)
+  contexts:
+  - nearest_stars.xlsx
+  adversarial: false
+
+- id: ts8_long_03
+  test_set: 8
+  answer_type: long
+  difficulty: hard
+  question: >
+    How complete is the table, that is, how many of the 100 stars have no common name, no spectral type or no B-V value, and do any of these gaps occur together?
+  answer: >
+    Of the 100 stars, 41 have no common name, 8 have no spectral type listed and 5 have no B-V value. The 5 stars missing a B-V value (HIP 15689, 114110, 82725, 54298 and 114176) are also missing their spectral type and their common name, and the other 3 stars without a spectral type (HIP 85605, 103039 and 21088) do have a B-V value listed.
+  ground_truth: >
+    Of the 100 stars, 41 have no common name, 8 have no spectral type listed and 5 have no B-V value. The 5 stars missing a B-V value (HIP 15689, 114110, 82725, 54298 and 114176) are also missing their spectral type and their common name, and the other 3 stars without a spectral type (HIP 85605, 103039 and 21088) do have a B-V value listed.
+  article_refs:
+  - Sheet1 - column common name, rows 2 to 101
+  - Sheet1 - column B-V (mag), rows 2 to 101
+  - Sheet1 - column Spectral Type, rows 2 to 101
+  contexts:
+  - nearest_stars.xlsx
+  adversarial: false

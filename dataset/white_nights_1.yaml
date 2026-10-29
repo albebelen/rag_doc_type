@@ -1,0 +1,176 @@
+- id: ts9_short_01
+  test_set: 9
+  answer_type: short
+  difficulty: easy
+  question: >
+    What is the girl's name, and how old does she say she is?
+  answer: >
+    The girl's name is Nastenka, and she tells the narrator that she is seventeen.
+  ground_truth: >
+    The girl's name is Nastenka, and she tells the narrator that she is seventeen.
+  article_refs:
+  - Second Night - PDF page 18
+  - Second Night - PDF page 28
+  contexts:
+  - White_Nights_-_Fyodor_Dostoyevsky_-_PDF.pdf
+  adversarial: false
+
+- id: ts9_short_02
+  test_set: 9
+  answer_type: short
+  difficulty: easy
+  question: >
+    Which opera does the lodger take Nastenka and her grandmother to see, and which role does the grandmother say she once played in it?
+  answer: >
+    The lodger takes them to The Barber of Seville, and the grandmother says she once took the part of Rosina in a private performance.
+  ground_truth: >
+    The lodger takes them to The Barber of Seville, and the grandmother says she once took the part of Rosina in a private performance.
+  article_refs:
+  - Second Night - PDF page 31
+  contexts:
+  - White_Nights_-_Fyodor_Dostoyevsky_-_PDF.pdf
+  adversarial: false
+
+- id: ts9_short_03
+  test_set: 9
+  answer_type: short
+  difficulty: easy
+  question: >
+    Whose novels does the lodger first send to Nastenka and her grandmother, and which other writer does he send later?
+  answer: >
+    The lodger first sends Walter Scott's novels, and later he also sends Pushkin.
+  ground_truth: >
+    The lodger first sends Walter Scott's novels, and later he also sends Pushkin.
+  article_refs:
+  - Second Night - PDF page 30
+  contexts:
+  - White_Nights_-_Fyodor_Dostoyevsky_-_PDF.pdf
+  adversarial: false
+
+- id: ts9_short_04
+  test_set: 9
+  answer_type: short
+  difficulty: easy
+  question: >
+    What does Matrona tell the narrator after he has read Nastenka's letter at the end of the story?
+  answer: >
+    Matrona tells the narrator that she has taken all the cobwebs off the ceiling, so he can have a wedding or give a party.
+  ground_truth: >
+    Matrona tells the narrator that she has taken all the cobwebs off the ceiling, so he can have a wedding or give a party.
+  article_refs:
+  - Morning - PDF pages 55-56
+  contexts:
+  - White_Nights_-_Fyodor_Dostoyevsky_-_PDF.pdf
+  adversarial: false
+
+- id: ts9_medium_01
+  test_set: 9
+  answer_type: medium
+  difficulty: medium
+  question: >
+    How does the narrator explain to Nastenka what a dreamer is, and how does she react to the word?
+  answer: >
+    The narrator tells Nastenka that a dreamer is not really a human being but a creature of an intermediate sort, who usually settles in some inaccessible corner as though hiding from the light of day. He grows attached to his corner like a snail or a tortoise, which is an animal and a house at once, and he is fond of his four walls, which are painted green, grimy and dismal and smell unpardonably of tobacco smoke. Nastenka replies that she knows what a dreamer is because she is one herself, and says that while sitting beside her grandmother she sometimes imagines marrying a Chinese Prince.
+  ground_truth: >
+    The narrator tells Nastenka that a dreamer is not really a human being but a creature of an intermediate sort, who usually settles in some inaccessible corner as though hiding from the light of day. He grows attached to his corner like a snail or a tortoise, which is an animal and a house at once, and he is fond of his four walls, which are painted green, grimy and dismal and smell unpardonably of tobacco smoke. Nastenka replies that she knows what a dreamer is because she is one herself, and says that while sitting beside her grandmother she sometimes imagines marrying a Chinese Prince.
+  article_refs:
+  - Second Night - PDF page 17
+  - Second Night - PDF page 18
+  contexts:
+  - White_Nights_-_Fyodor_Dostoyevsky_-_PDF.pdf
+  adversarial: false
+
+- id: ts9_medium_02
+  test_set: 9
+  answer_type: medium
+  difficulty: medium
+  question: >
+    How does Nastenka's grandmother keep her at home, and how did Nastenka once try to deceive her?
+  answer: >
+    Nastenka's blind grandmother pinned Nastenka's dress to her own after Nastenka got into mischief, so that the two sit together for days, the grandmother knitting a stocking while Nastenka sews or reads aloud. Once Nastenka tried to deceive her by persuading Fekla, the deaf charwoman, to sit in her place while the grandmother slept, and went off to see a friend nearby. The grandmother woke up and asked questions, Fekla could not tell what she was being asked, so she undid the pin and ran away, and Nastenka was caught and afterwards was not allowed to stir.
+  ground_truth: >
+    Nastenka's blind grandmother pinned Nastenka's dress to her own after Nastenka got into mischief, so that the two sit together for days, the grandmother knitting a stocking while Nastenka sews or reads aloud. Once Nastenka tried to deceive her by persuading Fekla, the deaf charwoman, to sit in her place while the grandmother slept, and went off to see a friend nearby. The grandmother woke up and asked questions, Fekla could not tell what she was being asked, so she undid the pin and ran away, and Nastenka was caught and afterwards was not allowed to stir.
+  article_refs:
+  - Second Night - PDF page 17
+  - Second Night - PDF page 28
+  contexts:
+  - White_Nights_-_Fyodor_Dostoyevsky_-_PDF.pdf
+  adversarial: false
+
+- id: ts9_medium_03
+  test_set: 9
+  answer_type: medium
+  difficulty: medium
+  question: >
+    What promise does the lodger make to Nastenka before leaving for Moscow, and what arrangement do they make for his return?
+  answer: >
+    The lodger tells Nastenka that he is poor and cannot marry her now, but swears that if he is ever in a position to marry, she will make his happiness. He says he will be in Moscow for a year to establish his position and that if she still loves him when he comes back they will be happy, although he cannot bind her by any promise. They agree not to tell her grandmother, and Nastenka says that on the embankment, at ten o'clock, he promised to come to them directly on his arrival and, if she did not refuse him, to tell the grandmother everything. They also agreed that on arriving he would either leave a letter for her with some good simple people she knows or be at their meeting place at ten o'clock on the day he arrived.
+  ground_truth: >
+    The lodger tells Nastenka that he is poor and cannot marry her now, but swears that if he is ever in a position to marry, she will make his happiness. He says he will be in Moscow for a year to establish his position and that if she still loves him when he comes back they will be happy, although he cannot bind her by any promise. They agree not to tell her grandmother, and Nastenka says that on the embankment, at ten o'clock, he promised to come to them directly on his arrival and, if she did not refuse him, to tell the grandmother everything. They also agreed that on arriving he would either leave a letter for her with some good simple people she knows or be at their meeting place at ten o'clock on the day he arrived.
+  article_refs:
+  - Second Night - PDF page 33
+  - Second Night - PDF page 34
+  - Second Night - PDF page 35
+  contexts:
+  - White_Nights_-_Fyodor_Dostoyevsky_-_PDF.pdf
+  adversarial: false
+
+- id: ts9_long_01
+  test_set: 9
+  answer_type: long
+  difficulty: hard
+  question: >
+    Trace Nastenka's relationship with the lodger as she tells it, from his arrival in the house to the point where he returns after a year.
+  answer: >
+    Nastenka explains that a new lodger moved into the upper storey of the little wooden house that belongs to her blind grandmother, and that the grandmother was displeased to hear that he was young and pleasant looking. One morning, when he came to discuss papering his rooms, Nastenka forgot she was pinned to her grandmother, jumped up so that the chair moved and burst into tears from shame, and he bowed and left. He then sent her French books, first Walter Scott's novels and later Pushkin, spoke to her on the stairs, asked whether she was dull sitting all day with her grandmother and invited her to the theatre without her grandmother's knowledge, which she refused, but he then took both of them to The Barber of Seville. He took them to the theatre twice more but otherwise almost stopped visiting, and Nastenka grew restless and thin, concluding that he only pitied her. A year earlier, in May, he told her grandmother that he had to go back to Moscow for a year, so Nastenka took a bundle of her clothes to his room, wept and said she could not live without him, and he answered that he was too poor to marry now but swore that if she still loved him after a year they would be happy. A year has now passed and he has been back for three days, but he has not shown himself or sent any word, which is why Nastenka is in tears.
+  ground_truth: >
+    Nastenka explains that a new lodger moved into the upper storey of the little wooden house that belongs to her blind grandmother, and that the grandmother was displeased to hear that he was young and pleasant looking. One morning, when he came to discuss papering his rooms, Nastenka forgot she was pinned to her grandmother, jumped up so that the chair moved and burst into tears from shame, and he bowed and left. He then sent her French books, first Walter Scott's novels and later Pushkin, spoke to her on the stairs, asked whether she was dull sitting all day with her grandmother and invited her to the theatre without her grandmother's knowledge, which she refused, but he then took both of them to The Barber of Seville. He took them to the theatre twice more but otherwise almost stopped visiting, and Nastenka grew restless and thin, concluding that he only pitied her. A year earlier, in May, he told her grandmother that he had to go back to Moscow for a year, so Nastenka took a bundle of her clothes to his room, wept and said she could not live without him, and he answered that he was too poor to marry now but swore that if she still loved him after a year they would be happy. A year has now passed and he has been back for three days, but he has not shown himself or sent any word, which is why Nastenka is in tears.
+  article_refs:
+  - Second Night - PDF page 28
+  - Second Night - PDF page 29
+  - Second Night - PDF page 30
+  - Second Night - PDF page 31
+  - Second Night - PDF page 32
+  - Second Night - PDF page 33
+  contexts:
+  - White_Nights_-_Fyodor_Dostoyevsky_-_PDF.pdf
+  adversarial: false
+
+- id: ts9_long_02
+  test_set: 9
+  answer_type: long
+  difficulty: hard
+  question: >
+    How do the narrator's feelings and his relationship with Nastenka develop over the four nights and the morning that follows?
+  answer: >
+    On the First Night the narrator, a lonely dreamer who has lived almost eight years in Petersburg with hardly an acquaintance, is despondent because the city has emptied for the summer, cheers up after a walk in the country, and ends the night happy after rescuing a crying girl from a drunken gentleman and agreeing to meet her again the next day. On the Second Night he describes himself as a dreamer who lives alone, tells her that he has lost his best years and has lived only for two evenings, and listens to Nastenka's history of the lodger who promised to return after a year, then suggests that she write to him. On the Third Night, a gloomy rainy day, he realizes that her tenderness towards him was really joy at the thought of seeing the other man, and he feels sad when she says she likes him because he has not fallen in love with her, and he goes home depressed when the lodger does not come. On the Fourth Night he has no reply to bring, and when Nastenka is in despair he confesses that he loves her, she says she loves him too, and they make plans for him to become their lodger. When the lodger suddenly appears, Nastenka rushes to him, returns briefly to give the narrator a warm kiss, and leaves with him. In the Morning the narrator receives a letter in which Nastenka asks his forgiveness, calls it all a dream and a mirage, says she is to be married to the lodger the next week and hopes to remain his friend, and although his room and his future seem dim, he says he bears her no grudge and asks whether a whole moment of happiness is too little for a man's whole life.
+  ground_truth: >
+    On the First Night the narrator, a lonely dreamer who has lived almost eight years in Petersburg with hardly an acquaintance, is despondent because the city has emptied for the summer, cheers up after a walk in the country, and ends the night happy after rescuing a crying girl from a drunken gentleman and agreeing to meet her again the next day. On the Second Night he describes himself as a dreamer who lives alone, tells her that he has lost his best years and has lived only for two evenings, and listens to Nastenka's history of the lodger who promised to return after a year, then suggests that she write to him. On the Third Night, a gloomy rainy day, he realizes that her tenderness towards him was really joy at the thought of seeing the other man, and he feels sad when she says she likes him because he has not fallen in love with her, and he goes home depressed when the lodger does not come. On the Fourth Night he has no reply to bring, and when Nastenka is in despair he confesses that he loves her, she says she loves him too, and they make plans for him to become their lodger. When the lodger suddenly appears, Nastenka rushes to him, returns briefly to give the narrator a warm kiss, and leaves with him. In the Morning the narrator receives a letter in which Nastenka asks his forgiveness, calls it all a dream and a mirage, says she is to be married to the lodger the next week and hopes to remain his friend, and although his room and his future seem dim, he says he bears her no grudge and asks whether a whole moment of happiness is too little for a man's whole life.
+  article_refs:
+  - First Night - PDF pages 5-14
+  - Second Night - PDF pages 16-25
+  - Third Night - PDF pages 38-43
+  - Fourth Night - PDF pages 46-54
+  - Morning - PDF pages 54-56
+  contexts:
+  - White_Nights_-_Fyodor_Dostoyevsky_-_PDF.pdf
+  adversarial: false
+
+- id: ts9_long_03
+  test_set: 9
+  answer_type: long
+  difficulty: hard
+  question: >
+    What role do letters play in the story, from the first letter Nastenka writes to the letter she sends the narrator at the end?
+  answer: >
+    In the Second Night, when Nastenka cannot go to the lodger herself, the narrator suggests that she write to him and sketches what the letter might say, and Nastenka turns out to have a letter already written and sealed, which she hands to him to deliver to some good simple people who will pass it on to the lodger, the two of them playfully spelling out and humming the name Rosina. This fits the arrangement she made with the lodger, that on arriving he would either leave her a letter or be at the meeting place at ten o'clock. On the Third Night the narrator says he will go for any answer as soon as it is light and notes that no letter has come. On the Fourth Night Nastenka asks eagerly whether he has brought the letter, and when he says there is none she is devastated, wondering whether something in her own letter caused the silence and complaining that she has not had a single line in three days. In the Morning Matrona brings the narrator a letter from Nastenka herself, in which she asks his forgiveness, says it was a dream and a mirage, announces that she is to be married to the lodger the following week, and hopes the narrator will stay her friend and brother.
+  ground_truth: >
+    In the Second Night, when Nastenka cannot go to the lodger herself, the narrator suggests that she write to him and sketches what the letter might say, and Nastenka turns out to have a letter already written and sealed, which she hands to him to deliver to some good simple people who will pass it on to the lodger, the two of them playfully spelling out and humming the name Rosina. This fits the arrangement she made with the lodger, that on arriving he would either leave her a letter or be at the meeting place at ten o'clock. On the Third Night the narrator says he will go for any answer as soon as it is light and notes that no letter has come. On the Fourth Night Nastenka asks eagerly whether he has brought the letter, and when he says there is none she is devastated, wondering whether something in her own letter caused the silence and complaining that she has not had a single line in three days. In the Morning Matrona brings the narrator a letter from Nastenka herself, in which she asks his forgiveness, says it was a dream and a mirage, announces that she is to be married to the lodger the following week, and hopes the narrator will stay her friend and brother.
+  article_refs:
+  - Second Night - PDF pages 34-36
+  - Third Night - PDF pages 41-43
+  - Fourth Night - PDF pages 46-47
+  - Morning - PDF pages 54-55
+  contexts:
+  - White_Nights_-_Fyodor_Dostoyevsky_-_PDF.pdf
+  adversarial: false

@@ -1,0 +1,211 @@
+- id: ts7_short_01
+  test_set: 7
+  answer_type: short
+  difficulty: easy
+  question: >
+    Which part of an operating system is always running and always resident in memory, which hardware unit raises a page fault, and what does the kernel article call the scheme of bringing data into RAM only when a program needs it?
+  answer: >
+    The kernel is the part of the operating system that is always running and always resident in memory. A page fault is raised by the memory management unit (MMU), and the kernel article calls the scheme of loading data into RAM when a program needs it demand paging.
+  ground_truth: >
+    The kernel is the part of the operating system that is always running and always resident in memory. A page fault is raised by the memory management unit (MMU), and the kernel article calls the scheme of loading data into RAM when a program needs it demand paging.
+  article_refs:
+  - Operating_system.pdf - Definition and purpose
+  - Kernel.pdf - Memory management
+  - Page_fault.pdf - Introduction (lead section)
+  contexts:
+  - Operating_system.pdf
+  - Kernel.pdf
+  - Page_fault.pdf
+  adversarial: false
+
+- id: ts7_short_02
+  test_set: 7
+  answer_type: short
+  difficulty: easy
+  question: >
+    What kind of kernel do most versions of Microsoft Windows use, what does Windows support to speed up I/O for many applications, and how does Windows report invalid page faults?
+  answer: >
+    Most versions of Microsoft Windows use a hybrid kernel. Windows supports demand paging of virtual memory, which speeds up I/O for many applications, and it uses structured exception handling to report invalid page faults as access violation exceptions.
+  ground_truth: >
+    Most versions of Microsoft Windows use a hybrid kernel. Windows supports demand paging of virtual memory, which speeds up I/O for many applications, and it uses structured exception handling to report invalid page faults as access violation exceptions.
+  article_refs:
+  - Operating_system.pdf - Microsoft Windows
+  - Kernel.pdf - Hybrid (or modular) kernels
+  - Page_fault.pdf - Invalid conditions
+  contexts:
+  - Operating_system.pdf
+  - Kernel.pdf
+  - Page_fault.pdf
+  adversarial: false
+
+- id: ts7_short_03
+  test_set: 7
+  answer_type: short
+  difficulty: easy
+  question: >
+    The operating system article says Linux is designed like other UNIX systems that do not use which kind of kernel, what lets the Linux kernel insert and remove code at runtime according to the kernel article, and which signal do UNIX-like systems typically use to report an invalid page fault?
+  answer: >
+    Linux is designed like other UNIX systems that do not use a microkernel. The Linux kernel is both monolithic and modular because it can insert and remove loadable kernel modules at runtime, and UNIX-like systems typically report invalid page faults with signals such as SIGSEGV.
+  ground_truth: >
+    Linux is designed like other UNIX systems that do not use a microkernel. The Linux kernel is both monolithic and modular because it can insert and remove loadable kernel modules at runtime, and UNIX-like systems typically report invalid page faults with signals such as SIGSEGV.
+  article_refs:
+  - Operating_system.pdf - Linux
+  - Kernel.pdf - Introduction (lead section)
+  - Page_fault.pdf - Invalid conditions
+  contexts:
+  - Operating_system.pdf
+  - Kernel.pdf
+  - Page_fault.pdf
+  adversarial: false
+
+- id: ts7_short_04
+  test_set: 7
+  answer_type: short
+  difficulty: easy
+  question: >
+    What does the operating system article call the violation that occurs when a program accesses an address it is not allowed to, which area of memory does the kernel article say applications are not permitted by the processor to address, and which address does the page fault article say a null pointer is usually represented as pointing to?
+  answer: >
+    The operating system article calls it a segmentation violation, or Seg-V. The kernel article says the processor does not permit applications to address kernel memory (kernel space), and the page fault article says a null pointer is usually represented as a pointer to address 0 in the address space.
+  ground_truth: >
+    The operating system article calls it a segmentation violation, or Seg-V. The kernel article says the processor does not permit applications to address kernel memory (kernel space), and the page fault article says a null pointer is usually represented as a pointer to address 0 in the address space.
+  article_refs:
+  - Operating_system.pdf - Memory management
+  - Kernel.pdf - Memory management
+  - Page_fault.pdf - Invalid page fault
+  contexts:
+  - Operating_system.pdf
+  - Kernel.pdf
+  - Page_fault.pdf
+  adversarial: false
+
+- id: ts7_medium_01
+  test_set: 7
+  answer_type: medium
+  difficulty: medium
+  question: >
+    What happens when a program accesses a page that is not currently in physical memory, and why is this more costly than a fault where the page is already in memory but not marked in the MMU?
+  answer: >
+    When a program needs data that is not in RAM, the kernel is interrupted, typically by a page fault. The operating system article says the kernel generally adjusts the program's virtual memory range to grant access, and the kernel article says it writes the contents of an inactive memory block to disk if necessary, replaces it with the requested data and resumes the program, a scheme known as demand paging. The page fault article calls this a major (hard) fault, where the OS must choose a free page or one used by another process, write that page out to mass storage if it was modified, mark it as not in memory in its page table, read the new page in and add an MMU entry. A minor (soft) fault is cheaper because the page is already in memory and the handler only has to point the MMU entry at it without reading from disk, whereas a major fault adds storage access latency to the program's execution.
+  ground_truth: >
+    When a program needs data that is not in RAM, the kernel is interrupted, typically by a page fault. The operating system article says the kernel generally adjusts the program's virtual memory range to grant access, and the kernel article says it writes the contents of an inactive memory block to disk if necessary, replaces it with the requested data and resumes the program, a scheme known as demand paging. The page fault article calls this a major (hard) fault, where the OS must choose a free page or one used by another process, write that page out to mass storage if it was modified, mark it as not in memory in its page table, read the new page in and add an MMU entry. A minor (soft) fault is cheaper because the page is already in memory and the handler only has to point the MMU entry at it without reading from disk, whereas a major fault adds storage access latency to the program's execution.
+  article_refs:
+  - Operating_system.pdf - Virtual memory
+  - Kernel.pdf - Memory management
+  - Page_fault.pdf - Minor page fault
+  - Page_fault.pdf - Major page fault
+  contexts:
+  - Operating_system.pdf
+  - Kernel.pdf
+  - Page_fault.pdf
+  adversarial: false
+
+- id: ts7_medium_02
+  test_set: 7
+  answer_type: medium
+  difficulty: medium
+  question: >
+    How is an illegal memory access detected and handled by the hardware and the kernel, and how is the error reported to the program on Windows and on UNIX-like systems?
+  answer: >
+    The kernel article says the processor monitors execution and stops a program that violates a rule, such as a user process trying to write to kernel memory. The operating system article says the attempt triggers an interrupt that puts the CPU back into supervisor mode with the kernel in charge, which is a segmentation violation, and the kernel generally terminates the offending program and reports the error. The page fault article adds that the page fault handler generally passes a segmentation fault to the offending process. Windows reports it as an access violation exception using structured exception handling, while UNIX-like systems typically use signals such as SIGSEGV, and if the program does not handle the error the default action is usually to terminate the process, possibly with a core dump.
+  ground_truth: >
+    The kernel article says the processor monitors execution and stops a program that violates a rule, such as a user process trying to write to kernel memory. The operating system article says the attempt triggers an interrupt that puts the CPU back into supervisor mode with the kernel in charge, which is a segmentation violation, and the kernel generally terminates the offending program and reports the error. The page fault article adds that the page fault handler generally passes a segmentation fault to the offending process. Windows reports it as an access violation exception using structured exception handling, while UNIX-like systems typically use signals such as SIGSEGV, and if the program does not handle the error the default action is usually to terminate the process, possibly with a core dump.
+  article_refs:
+  - Operating_system.pdf - Memory management
+  - Kernel.pdf - Hardware- or language-based protection
+  - Page_fault.pdf - Invalid page fault
+  - Page_fault.pdf - Invalid conditions
+  contexts:
+  - Operating_system.pdf
+  - Kernel.pdf
+  - Page_fault.pdf
+  adversarial: false
+
+- id: ts7_medium_03
+  test_set: 7
+  answer_type: medium
+  difficulty: medium
+  question: >
+    How does a bug in kernel code affect a monolithic kernel compared with a microkernel, and what does the page fault article say can result from illegal memory accesses and what can cause them?
+  answer: >
+    The kernel article says a monolithic kernel runs everything in the same address space, so a bug in a device driver can crash the entire system, whereas with a microkernel a crashing kernel process can often be handled by restarting the service that caused the error. The operating system article agrees, noting that a monolithic kernel is still vulnerable if any part of it is compromised, while microkernels separate the kernel's privileges into many security domains and reduce the consequences of a single kernel breach. The page fault article says illegal accesses and invalid page faults can result in a segmentation fault or bus error and an app or OS crash, and that software bugs are often the cause, although hardware memory errors such as those caused by overclocking can also corrupt pointers and make valid code fail.
+  ground_truth: >
+    The kernel article says a monolithic kernel runs everything in the same address space, so a bug in a device driver can crash the entire system, whereas with a microkernel a crashing kernel process can often be handled by restarting the service that caused the error. The operating system article agrees, noting that a monolithic kernel is still vulnerable if any part of it is compromised, while microkernels separate the kernel's privileges into many security domains and reduce the consequences of a single kernel breach. The page fault article says illegal accesses and invalid page faults can result in a segmentation fault or bus error and an app or OS crash, and that software bugs are often the cause, although hardware memory errors such as those caused by overclocking can also corrupt pointers and make valid code fail.
+  article_refs:
+  - Operating_system.pdf - Security
+  - Kernel.pdf - Monolithic kernels
+  - Kernel.pdf - Microkernels
+  - Page_fault.pdf - Invalid conditions
+  contexts:
+  - Operating_system.pdf
+  - Kernel.pdf
+  - Page_fault.pdf
+  adversarial: false
+
+- id: ts7_long_01
+  test_set: 7
+  answer_type: long
+  difficulty: hard
+  question: >
+    Explain how virtual memory lets programs use more memory than is physically installed, what the kernel and the MMU do when a needed page is missing, how costly this is on hard disk drives and solid-state drives, and what can be done to reduce page faults.
+  answer: >
+    The operating system article says virtual memory gives programs the perception of much more RAM than the computer really has, because less frequently used memory can be temporarily stored on disk and swapped back on demand. The kernel article explains that virtual addressing, usually done with paging or segmentation, adds a layer of indirection that lets the OS keep data on a hard drive instead of RAM. When a program needs data that is not in RAM, the CPU signals the kernel, which writes an inactive memory block to disk if necessary, replaces it with the requested data and resumes the program, a scheme known as demand paging. The page fault article says the MMU raises the page fault and the kernel handles it by making the page accessible in physical memory or denying an illegal access. This is costly because permanent storage takes several orders of magnitude longer to access than RAM. For a typical hard disk drive with a 3 ms rotational latency, a 5 ms seek time and 0.05 ms per page transfer, paging takes about 8 ms, so with a 0.2 microsecond memory access a page fault makes the operation take about 40,000 times as long. With a fast solid-state drive with a 30 microsecond page read latency and a 70 nanosecond memory access, a hard page fault still takes over 400 times as long, and page faults can also cause thrashing. To reduce them, developers and OS designers can reduce overall memory usage or improve memory locality, use a page replacement algorithm that maximizes page hits, and add more physical memory, which lets memory-mapped file chunks stay in memory longer and lessens the need for frequent swapping.
+  ground_truth: >
+    The operating system article says virtual memory gives programs the perception of much more RAM than the computer really has, because less frequently used memory can be temporarily stored on disk and swapped back on demand. The kernel article explains that virtual addressing, usually done with paging or segmentation, adds a layer of indirection that lets the OS keep data on a hard drive instead of RAM. When a program needs data that is not in RAM, the CPU signals the kernel, which writes an inactive memory block to disk if necessary, replaces it with the requested data and resumes the program, a scheme known as demand paging. The page fault article says the MMU raises the page fault and the kernel handles it by making the page accessible in physical memory or denying an illegal access. This is costly because permanent storage takes several orders of magnitude longer to access than RAM. For a typical hard disk drive with a 3 ms rotational latency, a 5 ms seek time and 0.05 ms per page transfer, paging takes about 8 ms, so with a 0.2 microsecond memory access a page fault makes the operation take about 40,000 times as long. With a fast solid-state drive with a 30 microsecond page read latency and a 70 nanosecond memory access, a hard page fault still takes over 400 times as long, and page faults can also cause thrashing. To reduce them, developers and OS designers can reduce overall memory usage or improve memory locality, use a page replacement algorithm that maximizes page hits, and add more physical memory, which lets memory-mapped file chunks stay in memory longer and lessens the need for frequent swapping.
+  article_refs:
+  - Operating_system.pdf - Virtual memory
+  - Operating_system.pdf - File system
+  - Kernel.pdf - Memory management
+  - Page_fault.pdf - Major page fault
+  - Page_fault.pdf - Performance impact
+  contexts:
+  - Operating_system.pdf
+  - Kernel.pdf
+  - Page_fault.pdf
+  adversarial: false
+
+- id: ts7_long_02
+  test_set: 7
+  answer_type: long
+  difficulty: hard
+  question: >
+    Compare the kernel designs of Linux, Windows and macOS, and describe what the documents say about how page faults or invalid memory accesses are handled or reported on them.
+  answer: >
+    For Linux, the operating system article says its design is similar to other UNIX systems that do not use a microkernel, and that Linux distributions are made of a kernel, system libraries and system utilities. The kernel article describes the Linux kernel as both monolithic and modular because it can load and remove kernel modules at runtime. The page fault article says UNIX-like systems typically report invalid page faults with signals such as SIGSEGV, and if the program does not handle the error the OS usually terminates the process and notifies the user, possibly producing a core dump. For Windows, the operating system article describes a proprietary system whose Windows Executive uses kernel-mode objects for processes, threads and sections, with support for demand paging of virtual memory and preemptive multitasking. The kernel article says most versions of Windows, from NT 3.1 to Windows 11, use a hybrid kernel. The page fault article says Windows uses structured exception handling to report invalid page faults as access violation exceptions, that it often reports crashes without details, and that an experienced user can retrieve more with WinDbg and the minidump. For macOS, the kernel article says it uses a hybrid kernel called XNU, based on code from OSF/1's Mach kernel and FreeBSD's monolithic kernel, and the page fault article names macOS together with Windows as an operating system using virtual memory where valid page faults are common and necessary.
+  ground_truth: >
+    For Linux, the operating system article says its design is similar to other UNIX systems that do not use a microkernel, and that Linux distributions are made of a kernel, system libraries and system utilities. The kernel article describes the Linux kernel as both monolithic and modular because it can load and remove kernel modules at runtime. The page fault article says UNIX-like systems typically report invalid page faults with signals such as SIGSEGV, and if the program does not handle the error the OS usually terminates the process and notifies the user, possibly producing a core dump. For Windows, the operating system article describes a proprietary system whose Windows Executive uses kernel-mode objects for processes, threads and sections, with support for demand paging of virtual memory and preemptive multitasking. The kernel article says most versions of Windows, from NT 3.1 to Windows 11, use a hybrid kernel. The page fault article says Windows uses structured exception handling to report invalid page faults as access violation exceptions, that it often reports crashes without details, and that an experienced user can retrieve more with WinDbg and the minidump. For macOS, the kernel article says it uses a hybrid kernel called XNU, based on code from OSF/1's Mach kernel and FreeBSD's monolithic kernel, and the page fault article names macOS together with Windows as an operating system using virtual memory where valid page faults are common and necessary.
+  article_refs:
+  - Operating_system.pdf - Linux
+  - Operating_system.pdf - Microsoft Windows
+  - Kernel.pdf - Introduction (lead section)
+  - Kernel.pdf - Hybrid (or modular) kernels
+  - Page_fault.pdf - Introduction (lead section)
+  - Page_fault.pdf - Invalid conditions
+  contexts:
+  - Operating_system.pdf
+  - Kernel.pdf
+  - Page_fault.pdf
+  adversarial: false
+
+- id: ts7_long_03
+  test_set: 7
+  answer_type: long
+  difficulty: hard
+  question: >
+    How does a page fault fit into the interrupt mechanism described for operating systems, and how does the kernel's handling of it compare with system calls and signals?
+  answer: >
+    The operating system article says an interrupt, also known as an abort, exception, fault, signal or trap, changes the CPU's control flow from the running program to an interrupt handler, and that the architecture and OS must transfer control to the handler, save the state of the running process and restore it afterwards. It lists accessing an invalid memory address among the most common software interrupt error conditions, and says that when a program accesses memory that is allocated to it but not accessible, the kernel is interrupted, typically by a page fault, and generally adjusts the program's virtual memory range to grant access. The page fault article describes the page fault as an exception raised by the MMU when a process accesses a page without proper preparations, with the kernel handling it by making the page accessible in physical memory or denying an illegal access. If the address is not part of the virtual address space, the fault is invalid and a segmentation fault is passed to the offending process, which on UNIX-like systems is reported as a signal such as SIGSEGV. The kernel article says the kernel performs tasks such as handling interrupts in its protected kernel space. In contrast to a page fault, which is raised by the MMU when a process accesses memory without proper preparations, a system call is how a process explicitly requests a service from the kernel that it does not normally have permission to run, and one of the ways to invoke it, which is available on most hardware and therefore very common, is to use an interrupt. The other methods are call gates, special system call instructions and a memory-based queue.
+  ground_truth: >
+    The operating system article says an interrupt, also known as an abort, exception, fault, signal or trap, changes the CPU's control flow from the running program to an interrupt handler, and that the architecture and OS must transfer control to the handler, save the state of the running process and restore it afterwards. It lists accessing an invalid memory address among the most common software interrupt error conditions, and says that when a program accesses memory that is allocated to it but not accessible, the kernel is interrupted, typically by a page fault, and generally adjusts the program's virtual memory range to grant access. The page fault article describes the page fault as an exception raised by the MMU when a process accesses a page without proper preparations, with the kernel handling it by making the page accessible in physical memory or denying an illegal access. If the address is not part of the virtual address space, the fault is invalid and a segmentation fault is passed to the offending process, which on UNIX-like systems is reported as a signal such as SIGSEGV. The kernel article says the kernel performs tasks such as handling interrupts in its protected kernel space. In contrast to a page fault, which is raised by the MMU when a process accesses memory without proper preparations, a system call is how a process explicitly requests a service from the kernel that it does not normally have permission to run, and one of the ways to invoke it, which is available on most hardware and therefore very common, is to use an interrupt. The other methods are call gates, special system call instructions and a memory-based queue.
+  article_refs:
+  - Operating_system.pdf - Interrupts
+  - Operating_system.pdf - Virtual memory
+  - Kernel.pdf - Introduction (lead section)
+  - Kernel.pdf - System calls
+  - Page_fault.pdf - Introduction (lead section)
+  - Page_fault.pdf - Invalid page fault
+  - Page_fault.pdf - Invalid conditions
+  contexts:
+  - Operating_system.pdf
+  - Kernel.pdf
+  - Page_fault.pdf
+  adversarial: false

@@ -1,128 +1,166 @@
-- id: ts4_short_01
-  test_set: 4
+- id: ts5_short_01
+  test_set: 5
   answer_type: short
   difficulty: easy
   question: >
-    Who is the protagonist of Crime and Punishment as discussed in the text?
+    After whose regime was the rebellion ideology that shaped Raskolnikov developing?
   answer: >
-    The protagonist of the novel is a complex individual named Rodian Romanovitch Raskolnikov[cite: 3].
+    The rebellion ideology that shaped Raskolnikov was developing after Tsar Alexander the Second's regime.
   ground_truth: >
-    The protagonist of the novel is a complex individual named Rodian Romanovitch Raskolnikov[cite: 3].
+    The rebellion ideology that shaped Raskolnikov was developing after Tsar Alexander the Second's regime.
   article_refs:
   - Paragraph 4
   contexts:
   - Crime_and_Punishment_Critical_Analysis.pdf
   adversarial: false
 
-- id: ts4_short_02
-  test_set: 4
+- id: ts5_short_02
+  test_set: 5
   answer_type: short
   difficulty: easy
   question: >
-    Which specific themes does the author choose to focus on in this critical analysis?
+    Which work by Albert Camus does the author give as an example of a novel borrowing from Dostoyevsky's nihilistic approach?
   answer: >
-    The author chooses to focus mainly on the themes of alienation, causality, nihilism, and the idea of punishment itself[cite: 3].
+    The author gives The Stranger by Albert Camus as the example of a work borrowing from Dostoyevsky's nihilistic approach.
   ground_truth: >
-    The author chooses to focus mainly on the themes of alienation, causality, nihilism, and the idea of punishment itself[cite: 3].
+    The author gives The Stranger by Albert Camus as the example of a work borrowing from Dostoyevsky's nihilistic approach.
+  article_refs:
+  - Paragraph 5
+  contexts:
+  - Crime_and_Punishment_Critical_Analysis.pdf
+  adversarial: false
+
+- id: ts5_short_03
+  test_set: 5
+  answer_type: short
+  difficulty: easy
+  question: >
+    According to the author, where does Raskolnikov himself say he feels himself healing and even repenting to a certain degree?
+  answer: >
+    According to the author, Raskolnikov himself marks that the hospital is the only place where he feels himself healing and even repenting to a certain degree.
+  ground_truth: >
+    According to the author, Raskolnikov himself marks that the hospital is the only place where he feels himself healing and even repenting to a certain degree.
+  article_refs:
+  - Paragraph 12
+  contexts:
+  - Crime_and_Punishment_Critical_Analysis.pdf
+  adversarial: false
+
+- id: ts5_short_04
+  test_set: 5
+  answer_type: short
+  difficulty: easy
+  question: >
+    What question does the author pose about the fear of punishment, and how do they answer it?
+  answer: >
+    The author asks whether the fear of punishment is grander than the punishment itself, and answers "Perhaps."
+  ground_truth: >
+    The author asks whether the fear of punishment is grander than the punishment itself, and answers "Perhaps."
+  article_refs:
+  - Paragraph 11
+  contexts:
+  - Crime_and_Punishment_Critical_Analysis.pdf
+  adversarial: false
+
+- id: ts5_medium_01
+  test_set: 5
+  answer_type: medium
+  difficulty: medium
+  question: >
+    What does the author say Raskolnikov comes to realize about his prison surroundings by the end of the novel, and what does Raskolnikov say actually caused his sickness?
+  answer: >
+    In his end monologue, Raskolnikov has come to enjoy his prison surroundings and finds that the idea of his doomed destiny is not as demonic and abhorrent as he conceived it to be, which reveals expectations versus reality as a key factor in the idea of punishment. Raskolnikov also mentions that his sickness at the end is a result of the other inmates' attempts to murder him rather than of prison life itself.
+  ground_truth: >
+    In his end monologue, Raskolnikov has come to enjoy his prison surroundings and finds that the idea of his doomed destiny is not as demonic and abhorrent as he conceived it to be, which reveals expectations versus reality as a key factor in the idea of punishment. Raskolnikov also mentions that his sickness at the end is a result of the other inmates' attempts to murder him rather than of prison life itself.
+  article_refs:
+  - Paragraph 10
+  - Paragraph 11
+  contexts:
+  - Crime_and_Punishment_Critical_Analysis.pdf
+  adversarial: false
+
+- id: ts5_medium_02
+  test_set: 5
+  answer_type: medium
+  difficulty: medium
+  question: >
+    What ideas does the author say the novel contemplates, and what makes it enticing to the author?
+  answer: >
+    The author says the novel untraditionally contemplates the ideas of repercussions, dissatisfaction, harmony and selfishness. What makes the novel enticing to the author is its unconventional allegorized exhibit of human psychology, raw and unfiltered, through which the theme of selfishness can fully be embodied.
+  ground_truth: >
+    The author says the novel untraditionally contemplates the ideas of repercussions, dissatisfaction, harmony and selfishness. What makes the novel enticing to the author is its unconventional allegorized exhibit of human psychology, raw and unfiltered, through which the theme of selfishness can fully be embodied.
   article_refs:
   - Paragraph 8
   contexts:
   - Crime_and_Punishment_Critical_Analysis.pdf
   adversarial: false
 
-- id: ts4_short_03
-  test_set: 4
-  answer_type: short
-  difficulty: easy
-  question: >
-    How is punishment envisioned by the character Svidrigaïlov?
-  answer: >
-    Svidrigaïlov envisions punishment as a dirty room filled with complimenting crawling dirty animals[cite: 3].
-  ground_truth: >
-    Svidrigaïlov envisions punishment as a dirty room filled with complimenting crawling dirty animals[cite: 3].
-  article_refs:
-  - Paragraph 10
-  contexts:
-  - Crime_and_Punishment_Critical_Analysis.pdf
-  adversarial: false
-
-- id: ts4_short_04
-  test_set: 4
-  answer_type: short
-  difficulty: easy
-  question: >
-    According to the bibliography, what is the title and URL of the source authored by Karl Marx?
-  answer: >
-    The source authored by Karl Marx is titled "Marxism & Alienation", and the provided URL is <https://www.marxists.org/subject/alienation/index.htm>[cite: 3].
-  ground_truth: >
-    The source authored by Karl Marx is titled "Marxism & Alienation", and the provided URL is <https://www.marxists.org/subject/alienation/index.htm>[cite: 3].
-  article_refs:
-  - Bibliography
-  contexts:
-  - Crime_and_Punishment_Critical_Analysis.pdf
-  adversarial: false
-
-- id: ts4_medium_01
-  test_set: 4
+- id: ts5_medium_03
+  test_set: 5
   answer_type: medium
   difficulty: medium
   question: >
-    How does the author describe Raskolnikov's relationship with fear from the beginning to the end of the novel?
+    How does the author characterize Raskolnikov's nihilism, and what does it imply about the nature of punishment?
   answer: >
-    Raskolnikov begins as fearless in order to commit his crime, becomes fearful afterward, and ultimately reverts back to a fearful, apologetic citizen[cite: 3]. By the end of the novel, he returns to love, which strips him of his hatred for the world[cite: 3].
+    The author describes Raskolnikov as violent in a nonchalant manner, to the point where the guilt of his murders consumes him. His nihilism is not simply the typically abused case of nothing matters, but a sort of meaninglessness that is still attached to the idea of consequence, physical punishment, remorse and acceptance. As a result, punishment becomes an ambiguous, open interpretation of one's own perception of it.
   ground_truth: >
-    Raskolnikov begins as fearless in order to commit his crime, becomes fearful afterward, and ultimately reverts back to a fearful, apologetic citizen[cite: 3]. By the end of the novel, he returns to love, which strips him of his hatred for the world[cite: 3].
+    The author describes Raskolnikov as violent in a nonchalant manner, to the point where the guilt of his murders consumes him. His nihilism is not simply the typically abused case of nothing matters, but a sort of meaninglessness that is still attached to the idea of consequence, physical punishment, remorse and acceptance. As a result, punishment becomes an ambiguous, open interpretation of one's own perception of it.
   article_refs:
+  - Paragraph 9
+  contexts:
+  - Crime_and_Punishment_Critical_Analysis.pdf
+  adversarial: false
+
+- id: ts5_long_01
+  test_set: 5
+  answer_type: long
+  difficulty: hard
+  question: >
+    How does the author compare Raskolnikov with The Stranger, American Psycho and Psycho, and what does the author see as the key difference that makes the American characters seem more realistic?
+  answer: >
+    The author notes that many works borrow from Dostoyevsky's nihilistic approach, such as The Stranger by Albert Camus, and finds it fascinating that alienated individuals like the stranger and Raskolnikov meet their ends in similar yet substantially unique ways. The author also compares the novel with American novels and films such as American Psycho and Psycho, which portray the same rhetoric in a darker light and romanticize the idea of murder, whereas Raskolnikov is a protagonist one does not expect to aspire to be, unlike American murders. Finally, the author argues that American Psycho and Psycho seem more realistic because their characters have a superior sense of themselves and remain steadfast in their commitment to their ideologies, while Raskolnikov's acceptance and confounding love for Sonya turns him into any other remorseful man, an outcome the author suggests Dostoyevsky had tried hard throughout the novel not to deliver.
+  ground_truth: >
+    The author notes that many works borrow from Dostoyevsky's nihilistic approach, such as The Stranger by Albert Camus, and finds it fascinating that alienated individuals like the stranger and Raskolnikov meet their ends in similar yet substantially unique ways. The author also compares the novel with American novels and films such as American Psycho and Psycho, which portray the same rhetoric in a darker light and romanticize the idea of murder, whereas Raskolnikov is a protagonist one does not expect to aspire to be, unlike American murders. Finally, the author argues that American Psycho and Psycho seem more realistic because their characters have a superior sense of themselves and remain steadfast in their commitment to their ideologies, while Raskolnikov's acceptance and confounding love for Sonya turns him into any other remorseful man, an outcome the author suggests Dostoyevsky had tried hard throughout the novel not to deliver.
+  article_refs:
+  - Paragraph 5
+  - Paragraph 8
+  - Paragraph 9
+  - Paragraph 13
+  contexts:
+  - Crime_and_Punishment_Critical_Analysis.pdf
+  adversarial: false
+
+- id: ts5_long_02
+  test_set: 5
+  answer_type: long
+  difficulty: hard
+  question: >
+    Why does the author think society has not collapsed into anarchy despite the terrible circumstances faced by deviants, and what role does fear play in this explanation?
+  answer: >
+    The author raises the question of how anarchy and universal chaos have not yet risen if such terrible circumstances existed for everyone. The author suggests that by the end of all three stories, the society the characters were rebelling so hard against appears to have triumphed, perhaps only in the physical sense because the system has not yet infiltrated the minds of deviants. The author then proposes that this is feasible because many people remain in fear of punishment and choose to think the same thoughts without ever acting on them. Fear and the shedding of it is what lingers with the author after reading the book, which the author traces through Raskolnikov, who starts off fearless in order to commit the crime, is fearful after the crime, and becomes a fearful, apologetic citizen again by the end of the novel, returning to love, which strips him of his hatred of the world.
+  ground_truth: >
+    The author raises the question of how anarchy and universal chaos have not yet risen if such terrible circumstances existed for everyone. The author suggests that by the end of all three stories, the society the characters were rebelling so hard against appears to have triumphed, perhaps only in the physical sense because the system has not yet infiltrated the minds of deviants. The author then proposes that this is feasible because many people remain in fear of punishment and choose to think the same thoughts without ever acting on them. Fear and the shedding of it is what lingers with the author after reading the book, which the author traces through Raskolnikov, who starts off fearless in order to commit the crime, is fearful after the crime, and becomes a fearful, apologetic citizen again by the end of the novel, returning to love, which strips him of his hatred of the world.
+  article_refs:
+  - Paragraph 15
   - Paragraph 16
   contexts:
   - Crime_and_Punishment_Critical_Analysis.pdf
   adversarial: false
 
-- id: ts4_medium_02
-  test_set: 4
-  answer_type: medium
-  difficulty: medium
-  question: >
-    According to the author, why does the ending of Crime and Punishment feel unrealistic compared to works like American Psycho?
-  answer: >
-    The author finds the ending unrealistic because Raskolnikov finds acceptance and a confounding love for Sonya, which turns him into an ordinary remorseful man[cite: 3]. In contrast, characters in works like American Psycho seem more realistic because they maintain a superior sense of themselves and remain steadfast in their commitment to their ideologies without seeking redemption[cite: 3].
-  ground_truth: >
-    The author finds the ending unrealistic because Raskolnikov finds acceptance and a confounding love for Sonya, which turns him into an ordinary remorseful man[cite: 3]. In contrast, characters in works like American Psycho seem more realistic because they maintain a superior sense of themselves and remain steadfast in their commitment to their ideologies without seeking redemption[cite: 3].
-  article_refs:
-  - Paragraph 13
-  contexts:
-  - Crime_and_Punishment_Critical_Analysis.pdf
-  adversarial: false
-
-- id: ts4_medium_03
-  test_set: 4
-  answer_type: medium
-  difficulty: medium
-  question: >
-    Which source from the bibliography is used to draw comparisons with the American film/novel "Psycho", and what is its URL?
-  answer: >
-    The bibliography references a source by Richard Brody titled "The Greatness of 'Psycho'" to support this comparison, with the URL <https://www.newyorker.com/culture/richard-brody/the-greatness-of-psycho>[cite: 3].
-  ground_truth: >
-    The bibliography references a source by Richard Brody titled "The Greatness of 'Psycho'" to support this comparison, with the URL <https://www.newyorker.com/culture/richard-brody/the-greatness-of-psycho>[cite: 3].
-  article_refs:
-  - Bibliography
-  contexts:
-  - Crime_and_Punishment_Critical_Analysis.pdf
-  adversarial: false
-
-- id: ts4_long_01
-  test_set: 4
+- id: ts5_long_03
+  test_set: 5
   answer_type: long
   difficulty: hard
   question: >
-    Elaborate on the author's argument regarding Raskolnikov's alienation and the true timeline of his punishment.
+    How does the author place Raskolnikov within his historical context, and how do they connect his ideology to later works and to Marx's concept of alienation?
   answer: >
-    The author argues that Raskolnikov is enveloped in a larger systemic oppression that ultimately leads him to commit murders[cite: 3]. Drawing on Karl Marx's concept of alienation as a process of marginalizing an individual who lacks conformity, the author suggests that Raskolnikov's fate is almost justifiable within such a strict system[cite: 3]. Crucially, the author posits that Raskolnikov is actually punished for being deviant long before he ever commits a crime, and is subsequently punished again for acting the way he was forced to act in the first place[cite: 3].
+    The author places Raskolnikov in the 1800s, formed in light of the rebellion ideology that was developing after Tsar Alexander the Second's regime. Although his ideologies seemed deviant and treacherous then, the author notes that they are still prevalent in many societies today and are neither uncommon nor new. The author connects the novel to later works that borrow from Dostoyevsky's nihilistic approach, such as Camus' The Stranger, noting that alienated individuals like the stranger and Raskolnikov meet their ends in similar yet substantially unique ways. The author then draws on Karl Marx's idea of alienation as a process of othering or marginalizing an individual who lacks conformity, arguing that it is almost justifiable for Raskolnikov to have the end he did in a system that has set rules for every deviant action, and that his unique alienation, enveloped in a larger systemic oppression, leads him to the murders.
   ground_truth: >
-    The author argues that Raskolnikov is enveloped in a larger systemic oppression that ultimately leads him to commit murders[cite: 3]. Drawing on Karl Marx's concept of alienation as a process of marginalizing an individual who lacks conformity, the author suggests that Raskolnikov's fate is almost justifiable within such a strict system[cite: 3]. Crucially, the author posits that Raskolnikov is actually punished for being deviant long before he ever commits a crime, and is subsequently punished again for acting the way he was forced to act in the first place[cite: 3].
+    The author places Raskolnikov in the 1800s, formed in light of the rebellion ideology that was developing after Tsar Alexander the Second's regime. Although his ideologies seemed deviant and treacherous then, the author notes that they are still prevalent in many societies today and are neither uncommon nor new. The author connects the novel to later works that borrow from Dostoyevsky's nihilistic approach, such as Camus' The Stranger, noting that alienated individuals like the stranger and Raskolnikov meet their ends in similar yet substantially unique ways. The author then draws on Karl Marx's idea of alienation as a process of othering or marginalizing an individual who lacks conformity, arguing that it is almost justifiable for Raskolnikov to have the end he did in a system that has set rules for every deviant action, and that his unique alienation, enveloped in a larger systemic oppression, leads him to the murders.
   article_refs:
+  - Paragraph 4
+  - Paragraph 5
   - Paragraph 13
-  - Paragraph 14
   contexts:
   - Crime_and_Punishment_Critical_Analysis.pdf
   adversarial: false

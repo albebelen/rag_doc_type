@@ -1,0 +1,163 @@
+- id: ts10_short_01
+  test_set: 10
+  answer_type: short
+  difficulty: easy
+  question: >
+    Quale termine viene definito nel manifesto?
+  answer: >
+    Il manifesto definisce il termine "discriminazione di genere".
+  ground_truth: >
+    Il manifesto definisce il termine "discriminazione di genere".
+  article_refs:
+  - Manifesto - titolo e testo centrale
+  contexts:
+  - discriminazione.jpg
+  adversarial: false
+
+- id: ts10_short_02
+  test_set: 10
+  answer_type: short
+  difficulty: easy
+  question: >
+    Quale numero viene indicato nel manifesto come numero anti violenza e stalking?
+  answer: >
+    Il numero indicato nel manifesto come numero anti violenza e stalking è il 1522.
+  ground_truth: >
+    Il numero indicato nel manifesto come numero anti violenza e stalking è il 1522.
+  article_refs:
+  - Manifesto - parte inferiore
+  contexts:
+  - discriminazione.jpg
+  adversarial: false
+
+- id: ts10_short_03
+  test_set: 10
+  answer_type: short
+  difficulty: easy
+  question: >
+    Quali sono l'università e l'organismo i cui nomi compaiono nell'intestazione del manifesto?
+  answer: >
+    Nell'intestazione compaiono l'Università di Verona e il suo Comitato Unico di Garanzia.
+  ground_truth: >
+    Nell'intestazione compaiono l'Università di Verona e il suo Comitato Unico di Garanzia.
+  article_refs:
+  - Manifesto - intestazione
+  contexts:
+  - discriminazione.jpg
+  adversarial: false
+
+- id: ts10_short_04
+  test_set: 10
+  answer_type: short
+  difficulty: easy
+  question: >
+    Contro quale tipo di linguaggio è rivolta la campagna STOP citata nel manifesto?
+  answer: >
+    La campagna STOP è rivolta contro l'uso di un linguaggio violento e sessista.
+  ground_truth: >
+    La campagna STOP è rivolta contro l'uso di un linguaggio violento e sessista.
+  article_refs:
+  - Manifesto - parte inferiore
+  contexts:
+  - discriminazione.jpg
+  adversarial: false
+
+- id: ts10_medium_01
+  test_set: 10
+  answer_type: medium
+  difficulty: medium
+  question: >
+    Quali tre termini usa il manifesto per descrivere l'azione svolta tra le persone che dà origine alla discriminazione di genere?
+  answer: >
+    Il manifesto descrive la discriminazione di genere come una distinzione, diversificazione o differenziazione operata fra persone.
+  ground_truth: >
+    Il manifesto descrive la discriminazione di genere come una distinzione, diversificazione o differenziazione operata fra persone.
+  article_refs:
+  - Manifesto - testo centrale (definizione)
+  contexts:
+  - discriminazione.jpg
+  adversarial: false
+
+- id: ts10_medium_02
+  test_set: 10
+  answer_type: medium
+  difficulty: medium
+  question: >
+    Quale effetto produce la discriminazione di genere secondo il manifesto, e in ragione di quali tre fattori?
+  answer: >
+    Secondo il manifesto la discriminazione di genere produce un trattamento meno favorevole, e lo fa in ragione del sesso, del genere e dell'orientamento sessuale.
+  ground_truth: >
+    Secondo il manifesto la discriminazione di genere produce un trattamento meno favorevole, e lo fa in ragione del sesso, del genere e dell'orientamento sessuale.
+  article_refs:
+  - Manifesto - testo centrale (definizione)
+  contexts:
+  - discriminazione.jpg
+  adversarial: false
+
+- id: ts10_medium_03
+  test_set: 10
+  answer_type: medium
+  difficulty: medium
+  question: >
+    Quali riferimenti utili compaiono nella parte bassa del manifesto, oltre alla campagna STOP?
+  answer: >
+    Nella parte bassa del manifesto compaiono il numero 1522, indicato come numero anti violenza e stalking, e l'indirizzo del sito univr.it.
+  ground_truth: >
+    Nella parte bassa del manifesto compaiono il numero 1522, indicato come numero anti violenza e stalking, e l'indirizzo del sito univr.it.
+  article_refs:
+  - Manifesto - parte inferiore
+  contexts:
+  - discriminazione.jpg
+  adversarial: false
+
+- id: ts10_long_01
+  test_set: 10
+  answer_type: long
+  difficulty: hard
+  question: >
+    Come definisce il manifesto la discriminazione di genere? Spiega quale azione descrive, tra chi viene operata, quale conseguenza produce e su quali basi.
+  answer: >
+    Il manifesto definisce la discriminazione di genere come una distinzione, diversificazione o differenziazione operata fra persone. Questa azione produce un trattamento meno favorevole per alcune di esse, e lo produce in ragione del sesso, del genere e dell'orientamento sessuale.
+  ground_truth: >
+    Il manifesto definisce la discriminazione di genere come una distinzione, diversificazione o differenziazione operata fra persone. Questa azione produce un trattamento meno favorevole per alcune di esse, e lo produce in ragione del sesso, del genere e dell'orientamento sessuale.
+  article_refs:
+  - Manifesto - titolo e testo centrale (definizione)
+  contexts:
+  - discriminazione.jpg
+  adversarial: false
+
+- id: ts10_long_02
+  test_set: 10
+  answer_type: long
+  difficulty: hard
+  question: >
+    Quali messaggi riunisce il manifesto in un unico documento, e sotto quali nomi e loghi istituzionali sono presentati?
+  answer: >
+    Il manifesto riunisce in un unico messaggio la definizione di discriminazione di genere, la campagna STOP contro l'uso di un linguaggio violento e sessista e l'indicazione del numero 1522 anti violenza e stalking. Questi contenuti sono presentati sotto l'intestazione dell'Università di Verona, del suo Comitato Unico di Garanzia e di UNIVR, il cui motto è "Il sapere a colori".
+  ground_truth: >
+    Il manifesto riunisce in un unico messaggio la definizione di discriminazione di genere, la campagna STOP contro l'uso di un linguaggio violento e sessista e l'indicazione del numero 1522 anti violenza e stalking. Questi contenuti sono presentati sotto l'intestazione dell'Università di Verona, del suo Comitato Unico di Garanzia e di UNIVR, il cui motto è "Il sapere a colori".
+  article_refs:
+  - Manifesto - intestazione
+  - Manifesto - testo centrale (definizione)
+  - Manifesto - parte inferiore
+  contexts:
+  - discriminazione.jpg
+  adversarial: false
+
+- id: ts10_long_03
+  test_set: 10
+  answer_type: long
+  difficulty: hard
+  question: >
+    Quali sono tutti i contenuti testuali principali del manifesto, dall'intestazione alla parte inferiore?
+  answer: >
+    L'intestazione riporta il nome dell'Università di Verona, il Comitato Unico di Garanzia e UNIVR con il motto "Il sapere a colori". Al centro compaiono il titolo "discriminazione di genere" e la sua definizione, secondo cui si tratta di una distinzione, diversificazione o differenziazione operata fra persone che produce un trattamento meno favorevole in ragione del sesso, del genere e dell'orientamento sessuale. La parte inferiore riporta la campagna STOP contro l'uso di un linguaggio violento e sessista, il numero 1522 indicato come numero anti violenza e stalking e l'indirizzo univr.it.
+  ground_truth: >
+    L'intestazione riporta il nome dell'Università di Verona, il Comitato Unico di Garanzia e UNIVR con il motto "Il sapere a colori". Al centro compaiono il titolo "discriminazione di genere" e la sua definizione, secondo cui si tratta di una distinzione, diversificazione o differenziazione operata fra persone che produce un trattamento meno favorevole in ragione del sesso, del genere e dell'orientamento sessuale. La parte inferiore riporta la campagna STOP contro l'uso di un linguaggio violento e sessista, il numero 1522 indicato come numero anti violenza e stalking e l'indirizzo univr.it.
+  article_refs:
+  - Manifesto - intestazione
+  - Manifesto - titolo e testo centrale (definizione)
+  - Manifesto - parte inferiore
+  contexts:
+  - discriminazione.jpg
+  adversarial: false

@@ -1,0 +1,235 @@
+- id: ts11_short_01
+  test_set: 11
+  answer_type: short
+  difficulty: easy
+  question: >
+    In the 2021-2022 WHO global survey on national IPC programmes, how many of the 106 assessed countries met all minimum requirements for IPC, and what share is that?
+  answer: >
+    Only four of the 106 assessed countries, or 3.8%, met all minimum requirements for IPC.
+  ground_truth: >
+    Only four of the 106 assessed countries, or 3.8%, met all minimum requirements for IPC.
+  article_refs:
+  - Foreword - page v
+  - Situation analysis of the implementation of IPC around the world - page 3
+  contexts:
+  - who_ipc_global-report_executive-summary.pdf
+  adversarial: false
+
+- id: ts11_short_02
+  test_set: 11
+  answer_type: short
+  difficulty: easy
+  question: >
+    How many health care workers does WHO estimate lost their lives to COVID-19 globally between the beginning of the pandemic and May 2021?
+  answer: >
+    WHO estimates that between 80 000 and 180 000 health care workers lost their lives to COVID-19 globally between the beginning of the pandemic and May 2021.
+  ground_truth: >
+    WHO estimates that between 80 000 and 180 000 health care workers lost their lives to COVID-19 globally between the beginning of the pandemic and May 2021.
+  article_refs:
+  - The problem of unsafe care resulting from HAIs and AMR - page 2
+  contexts:
+  - who_ipc_global-report_executive-summary.pdf
+  adversarial: false
+
+- id: ts11_short_03
+  test_set: 11
+  answer_type: short
+  difficulty: easy
+  question: >
+    According to the 2020 global WASH report cited in the summary, how many people were using health care facilities that lacked basic water services, and how many were using facilities with no toilets?
+  answer: >
+    The 2020 global WASH report found that 1.8 billion people were using health care facilities that lacked basic water services and 800 million people were using facilities with no toilets.
+  ground_truth: >
+    The 2020 global WASH report found that 1.8 billion people were using health care facilities that lacked basic water services and 800 million people were using facilities with no toilets.
+  article_refs:
+  - Situation analysis of the implementation of IPC around the world - page 7
+  contexts:
+  - who_ipc_global-report_executive-summary.pdf
+  adversarial: false
+
+- id: ts11_short_04
+  test_set: 11
+  answer_type: short
+  difficulty: easy
+  question: >
+    Who wrote the foreword of the executive summary, and what position does the author hold?
+  answer: >
+    The foreword was written by Zsuzsanna Jakab, who is Deputy Director-General of WHO.
+  ground_truth: >
+    The foreword was written by Zsuzsanna Jakab, who is Deputy Director-General of WHO.
+  article_refs:
+  - Foreword - page v
+  contexts:
+  - who_ipc_global-report_executive-summary.pdf
+  adversarial: false
+
+- id: ts11_medium_01
+  test_set: 11
+  answer_type: medium
+  difficulty: medium
+  question: >
+    How common are health care-associated infections among hospitalised patients in high-income versus low- and middle-income countries, and how do the figures change for intensive care patients?
+  answer: >
+    Out of every 100 patients in acute-care hospitals, seven patients in high-income countries and 15 patients in low- and middle-income countries will acquire at least one health care-associated infection during their hospital stay. Among patients in intensive care, up to 30% can be affected by health care-associated infections, with an incidence that is two to 20 times higher in low- and middle-income countries than in high-income countries, in particular among neonates.
+  ground_truth: >
+    Out of every 100 patients in acute-care hospitals, seven patients in high-income countries and 15 patients in low- and middle-income countries will acquire at least one health care-associated infection during their hospital stay. Among patients in intensive care, up to 30% can be affected by health care-associated infections, with an incidence that is two to 20 times higher in low- and middle-income countries than in high-income countries, in particular among neonates.
+  article_refs:
+  - The problem of unsafe care resulting from HAIs and AMR - page 2
+  contexts:
+  - who_ipc_global-report_executive-summary.pdf
+  adversarial: false
+
+- id: ts11_medium_02
+  test_set: 11
+  answer_type: medium
+  difficulty: medium
+  question: >
+    What did the comparison of the WHO national IPC surveys of 2017-2018 and 2021-2022 in 62 countries show about national IPC programmes, trained IPC focal points, dedicated IPC budgets and in-service IPC curricula?
+  answer: >
+    The percentage of countries with a national IPC programme remained relatively stable, at 64.5% in 2017-2018 and 61.3% in 2021-2022. There were significant increases in the percentage of countries with at least a trained IPC focal point (from 21% to 72.6%), in those with a dedicated IPC budget (from 25.8% to 48.4%) and in those with an in-service IPC curriculum (from 58.1% to 85.5%). However, in 2021-2022 only 41.5% of the countries reported that the national IPC programme was able to provide support for these training activities.
+  ground_truth: >
+    The percentage of countries with a national IPC programme remained relatively stable, at 64.5% in 2017-2018 and 61.3% in 2021-2022. There were significant increases in the percentage of countries with at least a trained IPC focal point (from 21% to 72.6%), in those with a dedicated IPC budget (from 25.8% to 48.4%) and in those with an in-service IPC curriculum (from 58.1% to 85.5%). However, in 2021-2022 only 41.5% of the countries reported that the national IPC programme was able to provide support for these training activities.
+  article_refs:
+  - Situation analysis of the implementation of IPC around the world - page 4
+  - Situation analysis of the implementation of IPC around the world - page 5
+  contexts:
+  - who_ipc_global-report_executive-summary.pdf
+  adversarial: false
+
+- id: ts11_medium_03
+  test_set: 11
+  answer_type: medium
+  difficulty: medium
+  question: >
+    What are the five elements of the WHO multimodal improvement strategy for IPC, and what does the summary say about targeting only one element?
+  answer: >
+    The five elements are system change, training and education, monitoring and feedback, reminders and communications, and safety climate or culture change. In other words, the strategy involves building the right system, teaching the right things, checking the right things, selling the right messages and ultimately living IPC throughout the entire health system. Targeting only one element, that is using a unimodal strategy, is more likely to result in improvements that are short-lived and not sustainable.
+  ground_truth: >
+    The five elements are system change, training and education, monitoring and feedback, reminders and communications, and safety climate or culture change. In other words, the strategy involves building the right system, teaching the right things, checking the right things, selling the right messages and ultimately living IPC throughout the entire health system. Targeting only one element, that is using a unimodal strategy, is more likely to result in improvements that are short-lived and not sustainable.
+  article_refs:
+  - Solutions to improve IPC - page 14
+  contexts:
+  - who_ipc_global-report_executive-summary.pdf
+  adversarial: false
+
+- id: ts11_long_01
+  test_set: 11
+  answer_type: long
+  difficulty: hard
+  question: >
+    How does the summary show that a country's income level is related to the implementation of IPC at the national level, at the health care facility level and for hand hygiene?
+  answer: >
+    At the national level, the summary reports a significant positive association between World Bank income level and IPC implementation, with high-income countries more than eight times as likely as low-income countries, and five times as likely as upper-middle-income countries, to have a more advanced implementation status. At the facility level, low-income countries scored at a basic level on average while high-income countries had more developed IPC in place for all core components, no facility in any low-income country had all the IPC minimum requirements in place, and only 18.9% of tertiary specialized facilities in high-income countries had implemented all of them. For hand hygiene, compliance was 64.5% in high-income countries versus 9.1% in low-income countries, alcohol-based handrub was available in only 17% of facilities in low-income countries versus 75% in high-income countries, and the scores for all five elements of the WHO multimodal hand hygiene improvement strategy were directly proportional to country income level. The foreword concludes from this that IPC is also a problem of equity and access to quality health care.
+  ground_truth: >
+    At the national level, the summary reports a significant positive association between World Bank income level and IPC implementation, with high-income countries more than eight times as likely as low-income countries, and five times as likely as upper-middle-income countries, to have a more advanced implementation status. At the facility level, low-income countries scored at a basic level on average while high-income countries had more developed IPC in place for all core components, no facility in any low-income country had all the IPC minimum requirements in place, and only 18.9% of tertiary specialized facilities in high-income countries had implemented all of them. For hand hygiene, compliance was 64.5% in high-income countries versus 9.1% in low-income countries, alcohol-based handrub was available in only 17% of facilities in low-income countries versus 75% in high-income countries, and the scores for all five elements of the WHO multimodal hand hygiene improvement strategy were directly proportional to country income level. The foreword concludes from this that IPC is also a problem of equity and access to quality health care.
+  article_refs:
+  - Foreword - page iv
+  - Situation analysis of the implementation of IPC around the world - page 4
+  - Situation analysis of the implementation of IPC around the world - page 5
+  - Situation analysis of the implementation of IPC around the world - page 6
+  - Situation analysis of the implementation of IPC around the world - page 7
+  - Situation analysis of the implementation of IPC around the world - page 8
+  contexts:
+  - who_ipc_global-report_executive-summary.pdf
+  adversarial: false
+
+- id: ts11_long_02
+  test_set: 11
+  answer_type: long
+  difficulty: hard
+  question: >
+    What evidence does the summary give for the impact and cost-effectiveness of IPC, and what limits does it note?
+  answer: >
+    The summary says that IPC interventions can reduce the rates of health care-associated infections, in particular catheter-associated bloodstream infections, catheter-associated urinary tract infections, surgical site infections and ventilator-associated pneumonia, by 35-70% irrespective of a country's income level, and that hand hygiene is the most effective single measure to reduce the transmission of pathogens. Appropriate hand hygiene was cost-saving in all populations tested, and improving it could save about US$ 16.5 in health care expenditure for every US dollar invested. Hand hygiene and environmental hygiene in health care facilities were found to be the most cost-saving interventions, more than halving the risk of dying from infections with AMR pathogens and decreasing the associated long-term complications and health burden by at least 40%. According to OECD, a package of improved hand hygiene, antibiotic stewardship programmes and enhanced environmental hygiene would reduce the health burden of AMR by 85% while saving 0.7 euros per capita per year, and an OECD and WHO modelling study found that appropriate PPE combined with rapid IPC training could have averted SARS-CoV-2 infections and related deaths among health care workers during the first six months of the COVID-19 pandemic, with substantial net savings. The summary also notes that more research is needed, especially in low- and middle-income countries, because only a limited number of cost-effectiveness studies exist and most of them were carried out in high-income countries.
+  ground_truth: >
+    The summary says that IPC interventions can reduce the rates of health care-associated infections, in particular catheter-associated bloodstream infections, catheter-associated urinary tract infections, surgical site infections and ventilator-associated pneumonia, by 35-70% irrespective of a country's income level, and that hand hygiene is the most effective single measure to reduce the transmission of pathogens. Appropriate hand hygiene was cost-saving in all populations tested, and improving it could save about US$ 16.5 in health care expenditure for every US dollar invested. Hand hygiene and environmental hygiene in health care facilities were found to be the most cost-saving interventions, more than halving the risk of dying from infections with AMR pathogens and decreasing the associated long-term complications and health burden by at least 40%. According to OECD, a package of improved hand hygiene, antibiotic stewardship programmes and enhanced environmental hygiene would reduce the health burden of AMR by 85% while saving 0.7 euros per capita per year, and an OECD and WHO modelling study found that appropriate PPE combined with rapid IPC training could have averted SARS-CoV-2 infections and related deaths among health care workers during the first six months of the COVID-19 pandemic, with substantial net savings. The summary also notes that more research is needed, especially in low- and middle-income countries, because only a limited number of cost-effectiveness studies exist and most of them were carried out in high-income countries.
+  article_refs:
+  - Foreword - page iv
+  - The impact and economic side of IPC - page 11
+  - The impact and economic side of IPC - page 12
+  contexts:
+  - who_ipc_global-report_executive-summary.pdf
+  adversarial: false
+
+- id: ts11_long_03
+  test_set: 11
+  answer_type: long
+  difficulty: hard
+  question: >
+    How are the eight core components of IPC programmes, the minimum requirements and the five-step implementation cycle related to each other?
+  answer: >
+    After the outbreak of Ebola virus disease in West Africa, WHO published guidelines in 2016 that identified eight core components of effective IPC programmes, six of which are relevant for both the national and the health care facility level, while two (core component 7, workload, staffing and bed occupancy, and core component 8, built environment, materials and equipment) should be implemented at the facility level. In 2019 WHO identified the IPC minimum requirements, which were derived directly from the core components through a consensus-building process and represent the starting point for the journey towards strong and effective IPC programmes, so they should be in place in all countries and health care facilities to support progress towards full and sustained implementation of all core components. Whether the minimum or the full requirements are applied, implementation should follow a stepwise approach, for which WHO proposes a five-step cycle: preparing for action, baseline assessment, developing and executing an action plan, evaluating impact, and sustaining the programme over the long term. A multimodal improvement strategy is embedded within each step of this cycle of continuous improvement, and a multidisciplinary team supports it.
+  ground_truth: >
+    After the outbreak of Ebola virus disease in West Africa, WHO published guidelines in 2016 that identified eight core components of effective IPC programmes, six of which are relevant for both the national and the health care facility level, while two (core component 7, workload, staffing and bed occupancy, and core component 8, built environment, materials and equipment) should be implemented at the facility level. In 2019 WHO identified the IPC minimum requirements, which were derived directly from the core components through a consensus-building process and represent the starting point for the journey towards strong and effective IPC programmes, so they should be in place in all countries and health care facilities to support progress towards full and sustained implementation of all core components. Whether the minimum or the full requirements are applied, implementation should follow a stepwise approach, for which WHO proposes a five-step cycle: preparing for action, baseline assessment, developing and executing an action plan, evaluating impact, and sustaining the programme over the long term. A multimodal improvement strategy is embedded within each step of this cycle of continuous improvement, and a multidisciplinary team supports it.
+  article_refs:
+  - Solutions to improve IPC - page 12
+  - Solutions to improve IPC - page 13
+  contexts:
+  - who_ipc_global-report_executive-summary.pdf
+  adversarial: false
+
+- id: ts11_short_05
+  test_set: 11
+  answer_type: short
+  difficulty: easy
+  question: >
+    According to Table 1, which challenges and gaps are listed for core component 4, HAI surveillance?
+  answer: >
+    Table 1 lists two challenges and gaps for core component 4, HAI surveillance, which are a lack of expertise among auditors and the need for high financial investment.
+  ground_truth: >
+    Table 1 lists two challenges and gaps for core component 4, HAI surveillance, which are a lack of expertise among auditors and the need for high financial investment.
+  article_refs:
+  - Table 1 - page 10
+  contexts:
+  - who_ipc_global-report_executive-summary.pdf
+  adversarial: false
+
+- id: ts11_medium_04
+  test_set: 11
+  answer_type: medium
+  difficulty: medium
+  question: >
+    According to Fig. 3, how did the share of countries at level E, the highest IPC programme level, and the share at level A, with no national IPC programme or operational plan, change between 2018 and 2021?
+  answer: >
+    According to Fig. 3, the share of countries at level E rose from 12% in 2018 and 2019 to 15% in 2020 and 16% in 2021. The share at level A, with no national IPC programme or operational plan, barely changed, at 9% in 2018, 9% in 2019, 7% in 2020 and 9% in 2021.
+  ground_truth: >
+    According to Fig. 3, the share of countries at level E rose from 12% in 2018 and 2019 to 15% in 2020 and 16% in 2021. The share at level A, with no national IPC programme or operational plan, barely changed, at 9% in 2018, 9% in 2019, 7% in 2020 and 9% in 2021.
+  article_refs:
+  - Fig. 3 - page 5
+  contexts:
+  - who_ipc_global-report_executive-summary.pdf
+  adversarial: false
+
+- id: ts11_medium_05
+  test_set: 11
+  answer_type: medium
+  difficulty: medium
+  question: >
+    According to Fig. 15, what are the five main reasons for investing in IPC?
+  answer: >
+    According to Fig. 15, the five main reasons for investing in IPC are that it ensures quality of care and patient and health workers' safety, directly improves key health outcomes and saves lives, reduces health care costs and out-of-pocket expenses, consists of proven strategies supported by implementation aids, and is scalable and adaptable to the local context.
+  ground_truth: >
+    According to Fig. 15, the five main reasons for investing in IPC are that it ensures quality of care and patient and health workers' safety, directly improves key health outcomes and saves lives, reduces health care costs and out-of-pocket expenses, consists of proven strategies supported by implementation aids, and is scalable and adaptable to the local context.
+  article_refs:
+  - Directions and priorities for countries - page 15
+  - Fig. 15 - page 16
+  contexts:
+  - who_ipc_global-report_executive-summary.pdf
+  adversarial: false
+
+- id: ts11_long_04
+  test_set: 11
+  answer_type: long
+  difficulty: hard
+  question: >
+    Describe the three phases of the WHO framework for IPC in outbreak preparedness, readiness and response shown in Fig. 14, including the timing of each phase and its immediate, early and advanced actions.
+  answer: >
+    Fig. 14 shows a cycle of three phases with feedback and continuous improvement at its centre. Phase one, Preparedness, takes place 2 years to 6 months in advance of any defined threat, with the immediate action of developing a foundation for IPC in outbreaks, the early action of identifying key personnel and partners, and the advanced action of auditing and testing the system. Phase two, Readiness, takes place up to 6 months in advance of a defined threat, with the immediate action of adapting existing tools for IPC in outbreaks, the early action of preparing key personnel and partners, and the advanced action of auditing and testing the system. Phase three, Response, covers the emergency actions required in response to a defined threat, with the immediate action of activating existing tools for IPC based on the outbreak context, the early action of monitoring for resurgence of cases, and the advanced action of conducting intra-action and/or after-action reviews. The text explains that WHO developed this framework, which provides a stepwise approach to IPC outbreak management, together with a toolkit of helpful resources.
+  ground_truth: >
+    Fig. 14 shows a cycle of three phases with feedback and continuous improvement at its centre. Phase one, Preparedness, takes place 2 years to 6 months in advance of any defined threat, with the immediate action of developing a foundation for IPC in outbreaks, the early action of identifying key personnel and partners, and the advanced action of auditing and testing the system. Phase two, Readiness, takes place up to 6 months in advance of a defined threat, with the immediate action of adapting existing tools for IPC in outbreaks, the early action of preparing key personnel and partners, and the advanced action of auditing and testing the system. Phase three, Response, covers the emergency actions required in response to a defined threat, with the immediate action of activating existing tools for IPC based on the outbreak context, the early action of monitoring for resurgence of cases, and the advanced action of conducting intra-action and/or after-action reviews. The text explains that WHO developed this framework, which provides a stepwise approach to IPC outbreak management, together with a toolkit of helpful resources.
+  article_refs:
+  - Directions and priorities for countries - page 15
+  - Fig. 14 - page 15
+  contexts:
+  - who_ipc_global-report_executive-summary.pdf
+  adversarial: false

@@ -3,15 +3,15 @@
   answer_type: short
   difficulty: easy
   question: >
-    Why does the narrator feel so lonely and despondent at the beginning of the story?
+    For how long has the narrator been living in Petersburg?
   answer: >
-    The narrator feels lonely because everyone he is accustomed to seeing in Petersburg is packing up and leaving the city for their summer villas[cite: 5].
+    The narrator has been living in Petersburg for almost eight years.
   ground_truth: >
-    The narrator feels lonely because everyone he is accustomed to seeing in Petersburg is packing up and leaving the city for their summer villas[cite: 5].
+    The narrator has been living in Petersburg for almost eight years.
   article_refs:
-  - First Night
+  - Paragraph 1
   contexts:
-  - White Nights - First Night.pdf
+  - White_Nights_-_First_Night_1.pdf
   adversarial: false
 
 - id: ts6_short_02
@@ -19,15 +19,15 @@
   answer_type: short
   difficulty: easy
   question: >
-    What does the narrator use to protect the girl from the staggering gentleman?
+    What colour is the hat worn by the woman the narrator sees leaning on the canal railing?
   answer: >
-    The narrator uses a knotted stick that he happened to be carrying in his right hand to deter the gentleman[cite: 5].
+    The woman leaning on the canal railing is wearing a very charming yellow hat, together with a jaunty little black mantle.
   ground_truth: >
-    The narrator uses a knotted stick that he happened to be carrying in his right hand to deter the gentleman[cite: 5].
+    The woman leaning on the canal railing is wearing a very charming yellow hat, together with a jaunty little black mantle.
   article_refs:
-  - First Night
+  - Paragraph 9
   contexts:
-  - White Nights - First Night.pdf
+  - White_Nights_-_First_Night_1.pdf
   adversarial: false
 
 - id: ts6_short_03
@@ -35,15 +35,31 @@
   answer_type: short
   difficulty: easy
   question: >
-    How old is the narrator, and what does he confess about his experience with women?
+    How old does the narrator say he is when he talks to the girl?
   answer: >
-    The narrator reveals that he is twenty-six years old and has absolutely no experience with women, having never really talked to one before[cite: 5].
+    The narrator tells the girl that he is twenty-six.
   ground_truth: >
-    The narrator reveals that he is twenty-six years old and has absolutely no experience with women, having never really talked to one before[cite: 5].
+    The narrator tells the girl that he is twenty-six.
   article_refs:
-  - First Night
+  - Paragraph 28
   contexts:
-  - White Nights - First Night.pdf
+  - White_Nights_-_First_Night_1.pdf
+  adversarial: false
+
+- id: ts6_short_04
+  test_set: 6
+  answer_type: short
+  difficulty: easy
+  question: >
+    At what hour does the girl say she might come to the canal the next day?
+  answer: >
+    The girl says that she will perhaps come to the canal the next day at ten o'clock.
+  ground_truth: >
+    The girl says that she will perhaps come to the canal the next day at ten o'clock.
+  article_refs:
+  - Paragraph 43
+  contexts:
+  - White_Nights_-_First_Night_1.pdf
   adversarial: false
 
 - id: ts6_medium_01
@@ -51,15 +67,16 @@
   answer_type: medium
   difficulty: medium
   question: >
-    How does the narrator describe his peculiar relationship with the houses in Petersburg?
+    What does the narrator eventually realize was the cause of his uneasiness before the encounter, and how does it make him feel about having nowhere to go?
   answer: >
-    The narrator feels a deep, personal connection to the houses in the city, imagining that they speak to him and share their news as he walks by[cite: 5]. He even has favorites, and recalls being genuinely heartbroken when a charming pink house was suddenly painted yellow[cite: 5].
+    The narrator realizes that everyone he knows by sight is leaving Petersburg for their summer villas for the holidays. This leaves him feeling lonely, forsaken and afraid of being left alone, and he feels ashamed, mortified and sad that he has nowhere to go and no reason to go away, since no one invites him.
   ground_truth: >
-    The narrator feels a deep, personal connection to the houses in the city, imagining that they speak to him and share their news as he walks by[cite: 5]. He even has favorites, and recalls being genuinely heartbroken when a charming pink house was suddenly painted yellow[cite: 5].
+    The narrator realizes that everyone he knows by sight is leaving Petersburg for their summer villas for the holidays. This leaves him feeling lonely, forsaken and afraid of being left alone, and he feels ashamed, mortified and sad that he has nowhere to go and no reason to go away, since no one invites him.
   article_refs:
-  - First Night
+  - Paragraph 1
+  - Paragraph 4
   contexts:
-  - White Nights - First Night.pdf
+  - White_Nights_-_First_Night_1.pdf
   adversarial: false
 
 - id: ts6_medium_02
@@ -67,15 +84,31 @@
   answer_type: medium
   difficulty: medium
   question: >
-    What is the strict condition the girl sets before agreeing to meet the narrator the following night?
+    How does the narrator relate to the houses of Petersburg, and what happened to the little pink house he was fond of?
   answer: >
-    The girl agrees to meet him the next day on the strict condition that he must not fall in love with her, emphasizing that she is only ready for friendship[cite: 5].
+    The narrator treats the houses of Petersburg as acquaintances and friends, imagining them greeting him from their windows and telling him their news, such as a new storey or a redecoration. His favourite was a charming little light pink brick house, until he heard it plaintively say that it was being painted yellow. It was painted yellow down to its columns and cornices, as yellow as a canary, and the narrator has not had the courage to visit his disfigured friend since.
   ground_truth: >
-    The girl agrees to meet him the next day on the strict condition that he must not fall in love with her, emphasizing that she is only ready for friendship[cite: 5].
+    The narrator treats the houses of Petersburg as acquaintances and friends, imagining them greeting him from their windows and telling him their news, such as a new storey or a redecoration. His favourite was a charming little light pink brick house, until he heard it plaintively say that it was being painted yellow. It was painted yellow down to its columns and cornices, as yellow as a canary, and the narrator has not had the courage to visit his disfigured friend since.
   article_refs:
-  - First Night
+  - Paragraph 2
   contexts:
-  - White Nights - First Night.pdf
+  - White_Nights_-_First_Night_1.pdf
+  adversarial: false
+
+- id: ts6_medium_03
+  test_set: 6
+  answer_type: medium
+  difficulty: medium
+  question: >
+    How does the narrator drive off the staggering gentleman who chases the girl, and how does the gentleman react?
+  answer: >
+    When the staggering gentleman overtakes the girl and she shrieks, the narrator crosses the street in a flash with the knotted stick he happens to be holding in his right hand. The gentleman understands the irresistible argument and falls back without a word, and only protests in rather vigorous language once the narrator and the girl are very far away, so that his words hardly reach them.
+  ground_truth: >
+    When the staggering gentleman overtakes the girl and she shrieks, the narrator crosses the street in a flash with the knotted stick he happens to be holding in his right hand. The gentleman understands the irresistible argument and falls back without a word, and only protests in rather vigorous language once the narrator and the girl are very far away, so that his words hardly reach them.
+  article_refs:
+  - Paragraph 12
+  contexts:
+  - White_Nights_-_First_Night_1.pdf
   adversarial: false
 
 - id: ts6_long_01
@@ -83,13 +116,59 @@
   answer_type: long
   difficulty: hard
   question: >
-    Explain how the narrator's mood changes when he leaves the city limits, and how he uses a metaphor to describe nature's spring awakening.
+    How does the narrator's mood change over the course of the day, from his despondency in the city to the evening when he heads home?
   answer: >
-    When the narrator wanders past the city gates into the fields, he instantly feels lighthearted, as if a great burden has been lifted from his soul, and he compares the joyous feeling to suddenly finding himself in Italy[cite: 5]. He beautifully compares the sudden burst of spring in Petersburg to a frail, consumptive girl who unexpectedly becomes radiant and inexplicably lovely for a fleeting moment[cite: 5]. He notes that this momentary beauty is tragic because it fades too quickly, leaving the girl pale and pensive once again before one even has time to love her[cite: 5].
+    The narrator begins the day oppressed by a strange despondency, feeling lonely and as though everyone is forsaking him because all Petersburg has gone to its summer villas, and for three days he wanders the town in profound dejection. He eventually realizes that this exodus is the cause of his uneasiness, and he feels ashamed, mortified and sad that no one has invited him anywhere. His mood lifts when, after long walks, he finds himself at the city gates and passes into the fields and meadows, where he feels lighthearted and as though a burden is falling off his soul, the passers-by seem friendly, and he feels pleased as never before, as though he were in Italy. He sums this up by saying that his night was better than his day: he returns to the town very late, after ten, and walks along the deserted canal embankment singing, like a happy man who has no friend with whom to share his joy, just before he has a most unexpected adventure.
   ground_truth: >
-    When the narrator wanders past the city gates into the fields, he instantly feels lighthearted, as if a great burden has been lifted from his soul, and he compares the joyous feeling to suddenly finding himself in Italy[cite: 5]. He beautifully compares the sudden burst of spring in Petersburg to a frail, consumptive girl who unexpectedly becomes radiant and inexplicably lovely for a fleeting moment[cite: 5]. He notes that this momentary beauty is tragic because it fades too quickly, leaving the girl pale and pensive once again before one even has time to love her[cite: 5].
+    The narrator begins the day oppressed by a strange despondency, feeling lonely and as though everyone is forsaking him because all Petersburg has gone to its summer villas, and for three days he wanders the town in profound dejection. He eventually realizes that this exodus is the cause of his uneasiness, and he feels ashamed, mortified and sad that no one has invited him anywhere. His mood lifts when, after long walks, he finds himself at the city gates and passes into the fields and meadows, where he feels lighthearted and as though a burden is falling off his soul, the passers-by seem friendly, and he feels pleased as never before, as though he were in Italy. He sums this up by saying that his night was better than his day: he returns to the town very late, after ten, and walks along the deserted canal embankment singing, like a happy man who has no friend with whom to share his joy, just before he has a most unexpected adventure.
   article_refs:
-  - First Night
+  - Paragraph 1
+  - Paragraph 4
+  - Paragraph 5
+  - Paragraph 7
+  - Paragraph 8
   contexts:
-  - White Nights - First Night.pdf
+  - White_Nights_-_First_Night_1.pdf
+  adversarial: false
+
+- id: ts6_long_02
+  test_set: 6
+  answer_type: long
+  difficulty: hard
+  question: >
+    How does the narrator describe himself and his loneliness to the girl, and what does he reveal about his experience with women and his dreams?
+  answer: >
+    The narrator tells the girl that he is shy and agitated with women, and that his arm trembles because it has never been held by a pretty little hand. He says he is a complete stranger to women and has never been used to them, having met only two or three women, who were all landladies. At twenty-six he says he has never seen anyone and has no acquaintance of any sort, and that he does nothing but dream every day that he will meet someone. He has often been in love in that way with no one, with an ideal he dreams of, making up regular romances in his dreams. He has even thought of speaking timidly to an aristocratic lady in the street, telling her that he is perishing in solitude and asking only for two or three sisterly words of sympathy. Finally, he calls himself a dreamer with so little real life that he values such moments as rare and goes over them again in his dreams, and he promises to dream of the girl all night, a whole week and a whole year.
+  ground_truth: >
+    The narrator tells the girl that he is shy and agitated with women, and that his arm trembles because it has never been held by a pretty little hand. He says he is a complete stranger to women and has never been used to them, having met only two or three women, who were all landladies. At twenty-six he says he has never seen anyone and has no acquaintance of any sort, and that he does nothing but dream every day that he will meet someone. He has often been in love in that way with no one, with an ideal he dreams of, making up regular romances in his dreams. He has even thought of speaking timidly to an aristocratic lady in the street, telling her that he is perishing in solitude and asking only for two or three sisterly words of sympathy. Finally, he calls himself a dreamer with so little real life that he values such moments as rare and goes over them again in his dreams, and he promises to dream of the girl all night, a whole week and a whole year.
+  article_refs:
+  - Paragraph 20
+  - Paragraph 22
+  - Paragraph 28
+  - Paragraph 30
+  - Paragraph 42
+  contexts:
+  - White_Nights_-_First_Night_1.pdf
+  adversarial: false
+
+- id: ts6_long_03
+  test_set: 6
+  answer_type: long
+  difficulty: hard
+  question: >
+    What arrangement do the narrator and the girl make for meeting again, what conditions does the girl set, and how does the night end?
+  answer: >
+    The girl says that she will perhaps come to the same place the next day at ten o'clock, but that the narrator must not imagine she is making an appointment with him, because she has to be there on her own account. She sets a compact as a condition: he must not fall in love with her, since she offers only friendship and asks him to be good and to do what she asks. She explains that she too has no one to whom she can say a word or ask advice, which is why she trusts him, and she hints that she may confide a secret to him the next day, though perhaps not, and that they will get to know each other better beforehand. The narrator promises to tell her everything about himself the next day, and the girl agrees that he should begin. They part with a repeated good-bye until tomorrow, and the narrator, too happy to go home, walks about all night.
+  ground_truth: >
+    The girl says that she will perhaps come to the same place the next day at ten o'clock, but that the narrator must not imagine she is making an appointment with him, because she has to be there on her own account. She sets a compact as a condition: he must not fall in love with her, since she offers only friendship and asks him to be good and to do what she asks. She explains that she too has no one to whom she can say a word or ask advice, which is why she trusts him, and she hints that she may confide a secret to him the next day, though perhaps not, and that they will get to know each other better beforehand. The narrator promises to tell her everything about himself the next day, and the girl agrees that he should begin. They part with a repeated good-bye until tomorrow, and the narrator, too happy to go home, walks about all night.
+  article_refs:
+  - Paragraph 43
+  - Paragraph 45
+  - Paragraph 47
+  - Paragraph 49
+  - Paragraph 51
+  - Paragraph 52
+  - Paragraph 57
+  contexts:
+  - White_Nights_-_First_Night_1.pdf
   adversarial: false
