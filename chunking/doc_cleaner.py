@@ -12,10 +12,12 @@ def clean_doc(file_path, is_eng=None):
     and returns a list of LangChain Document objects using the modern 1.x loader.
     """
 
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"File not found: {file_path}")
+
     if is_eng is None:
         is_eng = 'EN' in file_path
 
-    # to-do: add case for excel/csv 
     if file_path.lower().endswith(('.png', '.jpg', 'jpeg', '.svg')):
         clean_doc = clean_imageful_doc(file_path, is_eng)
     elif file_path.lower().endswith(('.csv', '.xls', '.xlsx')):
@@ -26,16 +28,23 @@ def clean_doc(file_path, is_eng=None):
     return clean_doc
 
 
+def get_cache_dir(file_path):
+    return Path("./cleaned_docs_cache") / get_file_hash(file_path)
+
+
+def get_cache_path(file_path, filename):
+    cache_dir = get_cache_dir(file_path)
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    return cache_dir / filename
+
+
 def clean_textful_doc(file_path, is_eng):
     import yaml
     from langchain_unstructured import UnstructuredLoader
     from langchain_core.documents import Document
     from utils.documents import preserialize_docs, reconstruct_docs
- 
-    file_hash = get_file_hash(file_path)
 
-    # Setup cache directory
-    cache_dir = Path(f"./cleaned_docs_cache/{file_hash}")
+    cache_dir = get_cache_dir(file_path)
     cache_dir.mkdir(parents=True, exist_ok=True)
 
     image_dir = cache_dir / "images"
@@ -54,8 +63,7 @@ def clean_textful_doc(file_path, is_eng):
             file_path=file_path,
             strategy="hi_res",
             languages=['eng' if is_eng else 'ita'],
-            skip_headers_and_footers=True, # strips page numbers, repetitive document titles at the top of pages, and legal footers
-            # rip images and tables and save them
+            skip_headers_and_footers=True, 
             extract_image_block_types=["Image", "Table"],
             extract_image_block_output_dir=str(image_dir)
         )
@@ -68,8 +76,6 @@ def clean_textful_doc(file_path, is_eng):
             yaml.dump(preserialize_docs(docs), f, allow_unicode=True, sort_keys=False)
         logger.info(f"Saved parsed output to {cache_file}")
 
-    # Enrich images
-    # todo: add case for excel/csv
     image_docs = [doc for doc in docs if doc.metadata.get("category") in ('Table', 'Image')]
     if image_docs:
         for doc in tqdm(image_docs, desc="Processing extracted images and tables"):
@@ -77,24 +83,22 @@ def clean_textful_doc(file_path, is_eng):
             if img_path and os.path.exists(img_path):
                 category = doc.metadata.get("category")
                 try:
-                    summary, md = clean_imageful_doc(img_path, 
-                                                    is_table=(category == 'Table'),
-                                                    is_eng=is_eng,
-                                                    cache_path=Path(img_path).with_suffix('.txt'))
+                    summary, md = clean_imageful_doc(
+                        img_path,
+                        is_table=(category == 'Table'),
+                        is_eng=is_eng,
+                    )
                 except:
                     logger.exception(f"Failed to extract {category} {img_path}, skipping it...")
                     continue
 
-                # Put it in page_content so it gets embedded and searched
                 doc.page_content = summary
-                # Tuck a safe copy in the metadata just in case it gets chopped
                 doc.metadata["payloads"] = [{
                     "type": f"{category.lower()}_markdown",
                     "raw_content": md
                 }]
 
-    # Double-tap the noise
-    # Unstructured's internal skip isn't 100% reliable, so we force-drop them here (especially headers)
+    # Remove noise 
     ignored_categories = {"Header", "Footer", "PageNumber", "PageBreak"}
     docs = [d for d in docs if d.metadata.get("category") not in ignored_categories]
 
@@ -105,7 +109,7 @@ def clean_textful_doc(file_path, is_eng):
 
     return docs
 
-def clean_imageful_doc(file_path, is_table=False, is_eng=True, cache_path=None):
+def clean_imageful_doc(file_path, is_table=False, is_eng=True):
     """
     Accepts an SVG, PNG, or JPG, converts SVGs in-memory, 
     and uses a local Ollama Vision LLM to extract data into structured Markdown.
@@ -113,14 +117,7 @@ def clean_imageful_doc(file_path, is_table=False, is_eng=True, cache_path=None):
     import base64
     from langchain_core.messages import HumanMessage
 
-    if not os.path.exists(file_path):
-        raise FileNotFoundError(f"File not found: {file_path}")
-
-    # Fallback to a hash-based cache file next to the original image if none is provided
-    if cache_path is None:
-        file_hash = get_file_hash(file_path)
-        cache_path = Path(file_path).with_name(f"{file_hash}.txt")
-    cache_path = Path(cache_path)
+    cache_path = get_cache_path(file_path, "vision.txt")
 
     # Check cache
     if cache_path.exists():
@@ -210,11 +207,7 @@ def clean_dataful_doc(file_path, is_eng=True):
     import yaml
     from utils.documents import preserialize_docs, reconstruct_docs
 
-    if not os.path.exists(file_path):
-        raise FileNotFoundError(f"File not found: {file_path}")
-
-    file_hash = get_file_hash(file_path)
-    cache_dir = Path(f"./cleaned_docs_cache/{file_hash}")
+    cache_dir = get_cache_dir(file_path)
     cache_dir.mkdir(parents=True, exist_ok=True)
 
     docs_file = cache_dir / "docs.yaml"
