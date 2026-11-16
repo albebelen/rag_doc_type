@@ -134,29 +134,122 @@ def retrieve_dataset(doc_ids, dataset):
 
     logger.info(f"PageIndex: loading {len(doc_ids)} document tree(s)")
     trees = []
+    ocr_page_cache = {}
+
+    def get_ocr_pages(doc_id):
+        if doc_id not in ocr_page_cache:
+            response = pi_client.get_ocr(doc_id, format="page")
+            pages = response.get("result")
+            if not isinstance(pages, list):
+                raise ValueError(f"PageIndex returned invalid OCR pages for {doc_id}")
+
+            page_map = {}
+            for page in pages:
+                if not isinstance(page, dict) or page.get("page_index") is None:
+                    raise ValueError(f"PageIndex returned a page without page_index for {doc_id}")
+                markdown = page.get("markdown")
+                if isinstance(markdown, str) and markdown.strip():
+                    page_map[int(page["page_index"])] = markdown
+            ocr_page_cache[doc_id] = page_map
+        return ocr_page_cache[doc_id]
+
     for doc_id in doc_ids:
         if not pi_client.is_retrieval_ready(doc_id):
             raise RuntimeError(f"PageIndex document is not ready: {doc_id}")
         logger.info(f"PageIndex: loading tree {doc_id}")
-        trees.append(pi_client.get_tree(doc_id, node_summary=True)['result'])
+        summary_tree = pi_client.get_tree(
+            doc_id, node_summary=True, include_text=False
+        )['result']
+        content_tree = pi_client.get_tree(doc_id, include_text=True)['result']
+        trees.append((doc_id, summary_tree, content_tree))
 
     contexts = []
     for query in tqdm(dataset["question"], desc="Retrieving tree"):
         logger.info(f"PageIndex: retrieving contexts for query {query[:80]!r}")
-        contexts.append([retrieve(tree, llm, query) for tree in trees])
+        contexts.append([
+            retrieve(
+                summary_tree,
+                llm,
+                query,
+                content_tree=content_tree,
+                ocr_page_loader=lambda doc_id=doc_id: get_ocr_pages(doc_id),
+            )
+            for doc_id, summary_tree, content_tree in trees
+        ])
 
     dataset["contexts"] = contexts
     dataset["retrieved_contexts"] = contexts
     return dataset
 
 
-def retrieve(tree, llm, query):
+def _collect_node_content(node_id, node_map, summary_node_map, ocr_page_loader, visited):
+    if node_id in visited:
+        return []
+    visited.add(node_id)
+
+    node = node_map.get(node_id)
+    summary_node = summary_node_map.get(node_id)
+    if node is None:
+        node = summary_node
+    if node is None:
+        return []
+
+    node_text = node.get("text")
+    if isinstance(node_text, str) and node_text.strip():
+        return [node_text]
+
+    children = node.get("nodes") or (summary_node or {}).get("nodes", [])
+    descendant_texts = []
+    for child in children:
+        child_id = child.get("node_id")
+        if child_id is not None:
+            descendant_texts.extend(_collect_node_content(
+                str(child_id), node_map, summary_node_map, ocr_page_loader, visited
+            ))
+    if descendant_texts:
+        logger.warning(f"PageIndex node {node_id!r} has no text; using descendant content")
+        return descendant_texts
+
+    start_page = node.get("start_index", node.get("page_index"))
+    end_page = node.get("end_index")
+    if end_page is None:
+        end_page = start_page
+    if start_page is not None and ocr_page_loader is not None:
+        try:
+            start_page, end_page = int(start_page), int(end_page)
+        except (TypeError, ValueError) as error:
+            raise ValueError(f"PageIndex node {node_id!r} has an invalid page range") from error
+        pages = ocr_page_loader()
+        page_texts = [
+            pages[page]
+            for page in range(start_page, end_page + 1)
+            if page in pages
+        ]
+        if page_texts:
+            logger.warning(f"PageIndex node {node_id!r} has no text; using OCR page content")
+            return page_texts
+
+    summary = (
+        (summary_node or {}).get("summary")
+        or node.get("summary")
+        or (summary_node or {}).get("prefix_summary")
+        or node.get("prefix_summary")
+    )
+    if isinstance(summary, str) and summary.strip():
+        logger.warning(f"PageIndex node {node_id!r} has no text; using its summary")
+        return [summary]
+
+    return []
+
+
+def retrieve(tree, llm, query, content_tree=None, ocr_page_loader=None):
     import pageindex.utils as utils
     from langchain_core.messages import HumanMessage, AIMessage
 
     tree_without_text = utils.remove_fields(tree.copy(), fields=['text'])
     tree_json_str = json.dumps(tree_without_text, indent=2)
-    node_map = utils.create_node_mapping(tree)
+    node_map = utils.create_node_mapping(content_tree if content_tree is not None else tree)
+    summary_node_map = utils.create_node_mapping(tree)
 
     messages = prompt_template.invoke({
         "query": query,
@@ -186,12 +279,30 @@ def retrieve(tree, llm, query):
 
         resolved_texts = []
         invalid_ids = []
+        missing_content_ids = []
 
         for node_id in response.node_list:
-            if node_id in node_map:
-                resolved_texts.append(node_map[node_id]["text"])
+            if node_id in node_map or node_id in summary_node_map:
+                node_contents = _collect_node_content(
+                    node_id, node_map, summary_node_map, ocr_page_loader, set()
+                )
+                if node_contents:
+                    resolved_texts.extend(node_contents)
+                else:
+                    missing_content_ids.append(node_id)
             else:
                 invalid_ids.append(node_id)
+
+        if missing_content_ids:
+            logger.warning(
+                f"PageIndex nodes {missing_content_ids} have no text, summary, "
+                "or recoverable descendant/page content"
+            )
+            if not resolved_texts:
+                raise ValueError(
+                    f"PageIndex selected nodes {missing_content_ids} without "
+                    "text, summary, or recoverable descendant/page content"
+                )
 
         if invalid_ids and not is_last_attempt:
             messages.append(AIMessage(content=response.model_dump_json(indent=2)))
@@ -204,5 +315,8 @@ def retrieve(tree, llm, query):
         if invalid_ids:
             logger.warning(f"PageIndex returned invalid node IDs {invalid_ids}; ignoring them")
 
-        logger.info(f"PageIndex: selected {len(resolved_texts)} node(s) for query")
+        logger.info(
+            f"PageIndex: selected {len(response.node_list)} node(s) and "
+            f"resolved {len(resolved_texts)} content segment(s)"
+        )
         return "\n\n".join(resolved_texts)
