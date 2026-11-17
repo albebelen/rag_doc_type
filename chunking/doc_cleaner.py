@@ -109,7 +109,30 @@ def clean_textful_doc(file_path, is_eng):
 
     return docs
 
-def clean_imageful_doc(file_path, is_table=False, is_eng=True):
+def _save_transcription_pdf(transcription, output_path):
+    import html
+    import fitz
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    story = fitz.Story(
+        html=(
+            '<div style="white-space: pre-wrap; font-family: sans-serif; '
+            f'font-size: 10pt;">{html.escape(transcription)}</div>'
+        )
+    )
+    writer = fitz.DocumentWriter(str(output_path))
+
+    def page_rect(_page_number, _filled):
+        mediabox = fitz.paper_rect("a4")
+        return mediabox, mediabox + (36, 36, -36, -36), fitz.Identity
+
+    try:
+        story.write(writer, page_rect)
+    finally:
+        writer.close()
+
+
+def clean_imageful_doc(file_path, is_table=False, is_eng=True, save_pdf=True):
     """
     Accepts an SVG, PNG, or JPG, converts SVGs in-memory, 
     and uses a local Ollama Vision LLM to extract data into structured Markdown.
@@ -120,7 +143,8 @@ def clean_imageful_doc(file_path, is_table=False, is_eng=True):
     cache_path = get_cache_path(file_path, "vision.txt")
 
     # Check cache
-    if cache_path.exists():
+    cache_hit = cache_path.exists()
+    if cache_hit:
         logger.info(f"Vision cache hit! Loading from {cache_path}")
         with open(cache_path, 'r', encoding='utf-8') as f:
             vision_text = f.read()
@@ -173,10 +197,25 @@ def clean_imageful_doc(file_path, is_table=False, is_eng=True):
         response = answer_llm.invoke([message])
         vision_text = response.content.strip()
 
-        # Save to cache
+    if not vision_text.strip():
+        if cache_hit:
+            raise ValueError(
+                f"Cached vision transcription is empty for {file_path}: {cache_path}. "
+                "Remove the empty cache file and retry."
+            )
+        raise ValueError(
+            f"Vision model returned an empty transcription for {file_path}."
+        )
+
+    if not cache_hit:
         cache_path.parent.mkdir(parents=True, exist_ok=True)
         with open(cache_path, 'w', encoding='utf-8') as f:
             f.write(vision_text)
+
+    if save_pdf:
+        pdf_path = get_cache_path(file_path, f"{Path(file_path).stem}.pdf")
+        _save_transcription_pdf(vision_text, pdf_path)
+        logger.info(f"Saved PageIndex-ready transcription PDF to {pdf_path}")
 
     if not is_table:
         return  f"Image Description:\n{vision_text}", vision_text
