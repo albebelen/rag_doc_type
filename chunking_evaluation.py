@@ -48,28 +48,32 @@ files = [
     # ("./test/0 -Avviso Pubblico Pro.vi 2025.2026 sito-signed.pdf", "pi-cmu5kq1gk003g0cntntnsjct9", 'ita', "./dataset/avviso_pubblico.yaml"),
     # ("./test/data-driven/nearest_stars.xlsx", "pi-cmvpiynpb002kh3nqsy42ahin", 'eng', "./dataset/data_driven_dataset.yaml"),
     # ("./test/data-driven/customers_list.csv", "pi-cmthhxedq010301nsfb7vm5vf", 'eng', "./dataset/customers_list_dataset.yaml"),
-    # ("./test/ibra_stat.jpg", "pi-cmthhxedq010301nsfb7vm5vf", 'ita', "./dataset/visual_centric_dataset.yaml"),
-    # ("./test/discriminazione.jpg", "pi-cmthhxedq010301nsfb7vm5vf", 'ita', "./dataset/discriminazione.yaml"),
-    ("./test/who_ipc_global-report_executive-summary.pdf", "pi-cmvsh9gty00hm0dp6vab48oth", 'eng', "./dataset/who.yaml"),
+    # ("./test/ibra_stat.jpg", "pi-cmwkuh3mo000k0dp72omzgmmf", 'ita', "./dataset/visual_centric_dataset.yaml"),
+    # ("./test/discriminazione.jpg", "pi-cmwkugrlp00060bp778k7wimk", 'ita', "./dataset/discriminazione.yaml"),
+    # ("./test/who_ipc_global-report_executive-summary.pdf", "pi-cmvsh9gty00hm0dp6vab48oth", 'eng', "./dataset/who.yaml"),
+    # ("./test/cross-ref-ballet/Ballet.pdf", "pi-cmwj5shuq00020bp8a8etdrcn", 'eng', "./dataset/ballet.yaml"),
+    # ("./test/cross-ref-ballet/Swan_Lake.pdf", "pi-cmwj5shtk00020bnze1pyyl6n", 'eng', "./dataset/ballet.yaml"),
+    # ("./test/cross-ref-ballet/Vaganova_method.pdf", "pi-cmwj5shym00010dnzf4t7ak2t", 'eng', "./dataset/ballet.yaml"),
+    # ("./test/info_health.png", "pi-cmwkxrwgy00230dp7ffwnlo5g", 'eng', "./dataset/health_info.yaml"),
 ]
 
 # Metodi di chunking
 # Keys are labels, Values are the actual function objectßs
 chunking_strategies = {
     "Fixed Length Chunking": run_fixed_size_chunking,
-    # # "Fixed Length Chunking With Overlap": run_overlapping_chunking,
-    # # "Paragraph-based Chunking": run_paragraph_chunking,
+    # "Fixed Length Chunking With Overlap": run_overlapping_chunking,
+    # "Paragraph-based Chunking": run_paragraph_chunking,
     "Recursive Chunking": run_recursive_chunking,
-    # # "Hierarchical Legal Chunking": run_hierarchical_legal_chunking,
-    # # "Semantic Chunking 0.70": run_semantic_chunking_70,
+    # "Hierarchical Legal Chunking": run_hierarchical_legal_chunking,
+    # "Semantic Chunking 0.70": run_semantic_chunking_70,
     "Semantic Chunking 0.75": run_semantic_chunking_75,
-    # # "Semantic Chunking 0.80": run_semantic_chunking_80,
-    # # "Semantic Chunking 0.85": run_semantic_chunking_85,
-    # # "Semantic Chunking 0.90": run_semantic_chunking_90,
-    # # "Sentence-based Chunking": run_advanced_sentence_chunking,
-    # # "Sliding Window Chunking": run_sliding_window,
-    # # #"Agentic Chunking Phi3": process_agentic_phi3,
-    # # #"Agentic Chunking llama3": process_agentic_llama3,
+    # "Semantic Chunking 0.80": run_semantic_chunking_80,
+    # "Semantic Chunking 0.85": run_semantic_chunking_85,
+    # "Semantic Chunking 0.90": run_semantic_chunking_90,
+    # "Sentence-based Chunking": run_advanced_sentence_chunking,
+    # "Sliding Window Chunking": run_sliding_window,
+    # #"Agentic Chunking Phi3": process_agentic_phi3,
+    # #"Agentic Chunking llama3": process_agentic_llama3,
     "Agentic Chunking": run_agentic_chunking,
     "Agentic Enrich Chunking": run_agentic_enrich_chunking,
     "PageIndex": None,
@@ -110,9 +114,28 @@ def retrieve_chunking_dataset(
 
         processed_docs = []
         for chunk in raw_chunks:
-            chunk.metadata["source_file"] = source_name
-            chunk.metadata = flatten_metadata_for_chroma(chunk.metadata)
-            processed_docs.append(chunk)
+            if isinstance(chunk, str):
+                document = Document(page_content=chunk, metadata={})
+            elif isinstance(chunk, Document):
+                document = chunk
+            else:
+                raise TypeError(
+                    f"Chunking returned unsupported item {type(chunk).__name__} "
+                    f"for source {source_name!r}"
+                )
+
+            if not document.page_content.strip():
+                continue
+
+            document.metadata["source_file"] = source_name
+            document.metadata = flatten_metadata_for_chroma(document.metadata)
+            processed_docs.append(document)
+
+        if not processed_docs:
+            raise ValueError(
+                f"Chunking produced no non-empty chunks for source {source_name!r}; "
+                "check that the cleaned input contains text."
+            )
 
         logger.info(f"Performing embedding...")
         vectorstore.add_documents(documents=processed_docs)
@@ -312,6 +335,13 @@ async def evaluate_method(chunking_name, chunking_function, page_index_doc_ids, 
 async def evaluate_file(file_name, page_index_doc_ids, is_eng, dataset_path, run_page_index=True):
     logger.info(f"Analysing file {file_name} [{page_index_doc_ids}]...")
     raw_text = clean_doc(file_name, is_eng)
+
+    if run_page_index and not page_index_doc_ids:
+        logger.warning(
+            "Skipping PageIndex for %s: no PageIndex document ID is configured.",
+            file_name,
+        )
+        run_page_index = False
 
     golden_dataset = load_dataset(dataset_path)
     timestamp = datetime.now()
