@@ -1,0 +1,130 @@
+- id: ts1_short_01
+  test_set: 1
+  answer_type: short
+  difficulty: easy
+  question: What's the maximum amount of sugar, in teaspoons, that women and men should have?
+  answer: Women shouldn't exceed 6 teaspoons of sugar and men shouldn't exceed 9 teaspoons.
+  ground_truth: 'Women: no more than 6 teaspoons of sugar; men: no more than 9 teaspoons.'
+  article_refs:
+  - 3. Avoid sugar
+  contexts:
+  - Just like alcohol, sugar also inhibits white blood cells from fighting bacteria and viruses. Women shouldn't exceed more than 6 teaspoons of sugar, while men shouldn't exceed 9 teaspoons. A typical can of pop has 10 teaspoons.
+  adversarial: false
+- id: ts1_short_02
+  test_set: 1
+  answer_type: short
+  difficulty: easy
+  question: How long should I hold my breath after someone sneezes or coughs near me?
+  answer: For even 10-15 seconds.
+  ground_truth: Holding your breath for 10-15 seconds after a sneeze or cough can reduce the chances of getting sick.
+  article_refs:
+  - 8. Hold your breath
+  contexts:
+  - Studies show that the droplets from sneezes and coughs carrying germs travel much farther than previously thought. Holding your breath for even 10-15 seconds after a sneeze or cough can reduce your chances of getting sick.
+  adversarial: false
+- id: ts1_medium_03
+  test_set: 1
+  answer_type: medium
+  difficulty: medium
+  question: If I want to avoid getting sick, is it better to do intense workouts or moderate exercise?
+  answer: Moderate exercise, in the long run, strengthens the immune system. Intense workouts leave the body in a weakened state that also weakens the immune system, making you more susceptible to getting sick for a 72-hour window afterwards.
+  ground_truth: Moderate exercise strengthens the immune system in the long run, whereas intense workouts weaken it and leave the body more susceptible to getting sick for a 72-hour window.
+  article_refs:
+  - 7. Exercise moderately
+  contexts:
+  - Moderate exercise, in the long run, strengthens your immune system. However, intense workouts leave your body in a weakened state that also weakens your immune system. After intense workouts, your body is more susceptible to getting sick for a 72-hour window.
+  adversarial: false
+- id: ts1_medium_04
+  test_set: 1
+  answer_type: medium
+  difficulty: medium
+  question: Does my gut have anything to do with my immune system, and what should I eat to support it?
+  answer: Roughly 60% to 70% of the entire immune system is located in the gut, which contains a healthy mix of bacteria that prevent pathogens and infections from being absorbed. To promote healthy bacteria it suggests kombucha or kimchi, instead of sugary yogurts.
+  ground_truth: About 60-70% of the immune system is in the gut, whose healthy bacteria prevent pathogens and infections from being absorbed; kombucha or kimchi (instead of sugary yogurts) are suggested as probiotic sources.
+  article_refs:
+  - 5. Probiotics
+  contexts:
+  - Roughly 60% to 70% of your entire immune system is located in your gut. Your gut contains a healthy mix of bacteria which prevent pathogens and infections from being absorbed. So promote healthy bacteria by way of kombucha or kimchi (instead of sugary yogurts).
+  adversarial: false
+- id: ts1_long_05
+  test_set: 1
+  answer_type: long
+  difficulty: hard
+  question: Which things at home are the biggest hotbeds for germs, and should I be cleaning them?
+  answer: Washing machines, phones, microwaves, keyboards, doorknobs, light switches, bed rails, remote controls and children's toys are all hotbeds for bacteria and germs. Yes, you should wash these objects occasionally, because it helps reduce the build up of bacteria and germs.
+  ground_truth: Washing machines, phones, microwaves, keyboards, doorknobs, light switches, bed rails, remote controls and children's toys are hotbeds for bacteria and germs; washing them occasionally reduces the build up of bacteria and germs.
+  article_refs:
+  - 4. Wash any item you touch
+  contexts:
+  - Washing machines, phones, microwaves, keyboards, doorknobs, light switches, bed rails, remote controls, and children's toys are all hotbeds for bacteria and germs! So washing all these objects occasionally helps reduce the risk of bacteria and germ build up.
+  adversarial: false
+- id: ts2_medium_06
+  test_set: 2
+  answer_type: medium
+  difficulty: medium
+  question: Do alcohol and sugar affect my white blood cells? If so, how?
+  answer: Tip 2 (alcohol) says excessive alcohol inhibits the immune system by reducing the ability of white blood cells to effectively kill bacteria. Tip 3 (sugar) says that, just like alcohol, sugar inhibits white blood cells from fighting bacteria and viruses.
+  ground_truth: Alcohol (tip 2) reduces the ability of white blood cells to effectively kill bacteria; sugar (tip 3) likewise inhibits white blood cells from fighting bacteria and viruses.
+  article_refs:
+  - 2. Rethink that extra drink
+  - 3. Avoid sugar
+  contexts:
+  - Studies have shown that excessive alcohol inhibits the immune system by reducing the ability of white blood cells to effectively kill bacteria. Alcohol also dehydrates and can disrupt your sleep which is also another way to get sick.
+  - Just like alcohol, sugar also inhibits white blood cells from fighting bacteria and viruses. Women shouldn't exceed more than 6 teaspoons of sugar, while men shouldn't exceed 9 teaspoons. A typical can of pop has 10 teaspoons.
+  adversarial: false
+- id: ts2_medium_07
+  test_set: 2
+  answer_type: medium
+  difficulty: hard
+  question: How can I avoid catching germs that spread through the air, like from coughs or stuffy rooms?
+  answer: Tip 8 says droplets from sneezes and coughs carrying germs travel much farther than previously thought, so holding your breath for 10-15 seconds after a sneeze or cough can reduce your chances of getting sick. Tip 9 says air circulating in a closed space such as an office or home carries germs and bacteria, so you should occasionally take a few minutes to get fresh air, even if it's chilly outside.
+  ground_truth: 'Tip 8: hold your breath for 10-15 seconds after a sneeze or cough because droplets travel farther than thought. Tip 9: get fresh air occasionally because air circulating in closed spaces carries germs and bacteria.'
+  article_refs:
+  - 8. Hold your breath
+  - 9. Get fresh air
+  contexts:
+  - Studies show that the droplets from sneezes and coughs carrying germs travel much farther than previously thought. Holding your breath for even 10-15 seconds after a sneeze or cough can reduce your chances of getting sick.
+  - Sometimes, sharing warm air inside an office or home can lead to getting sick. The air that's circulating in a closed space carries germs and bacteria that can infect you. So take a few minutes occasionally to get some fresh air, when if it's a little chilly outside.
+  adversarial: false
+- id: ts2_long_08
+  test_set: 2
+  answer_type: long
+  difficulty: hard
+  question: Can germs on the things I touch every day get into my body, and what can I do to stop that?
+  answer: Tip 4 explains that many everyday objects (washing machines, phones, microwaves, keyboards, doorknobs, light switches, bed rails, remote controls, children's toys) are hotbeds for bacteria and germs, and recommends washing them occasionally to reduce build up. Tip 6 explains that, because we touch so many things during the day, biting your nails exposes your mouth, nose and eyes to bacteria and germs that could be harmful, and recommends washing your hands with soap often and avoiding nibbling. Together, they describe a route from contaminated objects to hands to the mouth, nose and eyes, and recommend cleaning both the objects and your hands.
+  ground_truth: 'Germs build up on commonly touched objects (tip 4: wash them occasionally) and reach the mouth, nose and eyes via the hands when biting nails (tip 6: wash hands with soap often and avoid nibbling).'
+  article_refs:
+  - 4. Wash any item you touch
+  - 6. Stop biting your nails
+  contexts:
+  - Washing machines, phones, microwaves, keyboards, doorknobs, light switches, bed rails, remote controls, and children's toys are all hotbeds for bacteria and germs! So washing all these objects occasionally helps reduce the risk of bacteria and germ build up.
+  - Think about everything you touch in the course of the day. Biting your nails means exposing your mouth, nose and eyes to a variety of bacteria and germs that could be harmful to you. So wash your hands with soap often and avoid the nibbling.
+  adversarial: false
+- id: ts2_long_09
+  test_set: 2
+  answer_type: long
+  difficulty: hard
+  question: What everyday habits can weaken my immune system and make me more likely to get sick?
+  answer: Excessive alcohol inhibits the immune system by reducing the ability of white blood cells to kill bacteria, and it also dehydrates and can disrupt sleep, another way to get sick. Sugar inhibits white blood cells from fighting bacteria and viruses; women shouldn't exceed 6 teaspoons and men 9 (a typical can of pop has 10). Intense workouts leave the body in a weakened state that also weakens the immune system, making you more susceptible to getting sick for a 72-hour window, unlike moderate exercise, which strengthens the immune system in the long run.
+  ground_truth: Excessive alcohol (impairs white blood cells, dehydrates, disrupts sleep), sugar (inhibits white blood cells; limits 6 tsp for women, 9 for men) and intense workouts (weakened immune system for a 72-hour window).
+  article_refs:
+  - 2. Rethink that extra drink
+  - 3. Avoid sugar
+  - 7. Exercise moderately
+  contexts:
+  - Studies have shown that excessive alcohol inhibits the immune system by reducing the ability of white blood cells to effectively kill bacteria. Alcohol also dehydrates and can disrupt your sleep which is also another way to get sick.
+  - Just like alcohol, sugar also inhibits white blood cells from fighting bacteria and viruses. Women shouldn't exceed more than 6 teaspoons of sugar, while men shouldn't exceed 9 teaspoons. A typical can of pop has 10 teaspoons.
+  - Moderate exercise, in the long run, strengthens your immune system. However, intense workouts leave your body in a weakened state that also weakens your immune system. After intense workouts, your body is more susceptible to getting sick for a 72-hour window.
+  adversarial: false
+- id: ts2_short_10
+  test_set: 2
+  answer_type: short
+  difficulty: hard
+  question: How many hours of sleep do I need each night to avoid getting sick?
+  answer: The material does not specify a number of hours of sleep. It only says that alcohol can disrupt your sleep, which is another way to get sick.
+  ground_truth: 'Not answerable: no recommended number of hours of sleep is given; the only mention is that alcohol can disrupt sleep, which is another way to get sick.'
+  article_refs:
+  - 2. Rethink that extra drink
+  contexts:
+  - Studies have shown that excessive alcohol inhibits the immune system by reducing the ability of white blood cells to effectively kill bacteria. Alcohol also dehydrates and can disrupt your sleep which is also another way to get sick.
+  adversarial: true

@@ -1,0 +1,144 @@
+- id: ts1_short_01
+  test_set: 1
+  answer_type: short
+  difficulty: easy
+  question: In which period and century did ballet originate?
+  answer: Ballet originated during the Italian Renaissance, in the fifteenth century.
+  ground_truth: Ballet originated during the Italian Renaissance in the fifteenth century.
+  article_refs:
+  - Ballet - Introduction
+  contexts:
+  - 'Ballet (French: [balɛ]) is a type of performance dance that originated during the Italian Renaissance in the fifteenth century and later developed into a concert dance form in France and Russia.'
+  adversarial: false
+- id: ts1_short_02
+  test_set: 1
+  answer_type: short
+  difficulty: easy
+  question: Who devised the Vaganova method, and in which years did she live?
+  answer: The Vaganova method was devised by the Russian dancer and pedagogue Agrippina Vaganova (1879-1951).
+  ground_truth: Agrippina Vaganova (1879-1951), a Russian dancer and pedagogue, devised the Vaganova method.
+  article_refs:
+  - Vaganova method - Introduction
+  contexts:
+  - The Vaganova method is a ballet technique and training system devised by the Russian dancer and pedagogue Agrippina Vaganova (1879-1951). It was derived from the teachings of the Premier Maître de Ballet Marius Petipa, throughout the late 19th century.
+  adversarial: false
+- id: ts1_medium_03
+  test_set: 1
+  answer_type: medium
+  difficulty: medium
+  question: Where, when and under whose choreography did Swan Lake premiere, and why was the premiere considered a failure?
+  answer: 'Swan Lake premiered on 4 March (O.S. 20 February) 1877 at the Bolshoi Theatre in Moscow, performed by the Bolshoi Ballet with choreography by Julius Reisinger. It was poorly received: most critics judged the score far too complicated for ballet (too noisy, too ''Wagnerian'' and too symphonic) and found Reisinger''s choreography unimaginative and unmemorable.'
+  ground_truth: The premiere took place on 4 March (O.S. 20 February) 1877 at the Bolshoi Theatre in Moscow, choreographed by Julius Reisinger. It was badly received because critics found the score too complicated, noisy, 'Wagnerian' and symphonic, and the choreography unimaginative and unmemorable.
+  article_refs:
+  - Swan Lake - Introduction
+  - Swan Lake - Original production of 1877
+  contexts:
+  - The ballet was premiered by the Bolshoi Ballet on 4 March [O.S. 20 February] 1877 at the Bolshoi Theatre in Moscow. The choreographer of this original production was Julius Reisinger (Václav Reisinger).
+  - The première was not well received. Though there were a few critics who recognised the virtues of the score, most considered it to be far too complicated for ballet. It was labelled "too noisy, too 'Wagnerian' and too symphonic." The critics also thought Reisinger's choreography was "unimaginative and altogether unmemorable."
+  adversarial: false
+- id: ts1_medium_04
+  test_set: 1
+  answer_type: medium
+  difficulty: medium
+  question: What was Agrippina Vaganova's career path after graduating from the Imperial Ballet School, and which books did she write to document her method?
+  answer: After graduating from the Imperial Ballet School in Saint Petersburg in 1897, she danced with the Imperial Russian Ballet. She retired from dancing in 1916 to teach and in 1921 returned as a teacher at the school, by then renamed the Leningrad Choreographic School. She wrote Fundamentals of the Classical Dance (1934) and The Foundation For Dance, better known as Basic Principles of Russian Classical Dance (1948).
+  ground_truth: Graduated in 1897 and danced with the Imperial Russian Ballet; retired from dancing in 1916; returned in 1921 as a teacher at the school, renamed the Leningrad Choreographic School. She authored Fundamentals of the Classical Dance (1934) and The Foundation For Dance / Basic Principles of Russian Classical Dance (1948).
+  article_refs:
+  - Vaganova method - History
+  contexts:
+  - Upon graduating from the Imperial Ballet School in Saint Petersburg in 1897, Agrippina Vaganova began dancing with the school's associated professional company, the Imperial Russian Ballet. She retired from dancing in 1916 to pursue a teaching career and in 1921 returned as a teacher at the school, which had been renamed the Leningrad Choreographic School.
+  - In 1934, Vaganova wrote Fundamentals of the Classical Dance, which remains a standard textbook for the instruction of ballet technique. In 1948, Vaganova authored a book titled The Foundation For Dance (more commonly known as Basic Principles of Russian Classical Dance) that outlined her training method and ballet technique.
+  adversarial: false
+- id: ts1_long_05
+  test_set: 1
+  answer_type: long
+  difficulty: hard
+  question: How did the 1895 Petipa-Ivanov revival of Swan Lake change the 1877 libretto and structure, and who revised Tchaikovsky's score for it?
+  answer: 'For the 1895 revival, Modest Tchaikovsky revised the libretto. Odette changed from a fairy swan-maiden into a cursed mortal woman, and the villain changed from Odette''s stepmother to the magician von Rothbart. The finale changed too: in the 1877 scenario the lovers simply drowned at the hand of the stepmother, whereas in 1895 Odette drowns herself, Siegfried chooses to die with her, and their spirits are reunited in an apotheosis. The ballet was also reduced from four acts to three, with act 2 becoming act 1, scene 2. Tchaikovsky''s score was revised by Riccardo Drigo, after approval from Modest Tchaikovsky, and there are major differences between Drigo''s and Tchaikovsky''s scores.'
+  ground_truth: 'Modest Tchaikovsky changed the libretto: Odette became a cursed mortal woman instead of a fairy swan-maiden; the villain became the magician von Rothbart instead of the stepmother; the finale became Odette drowning herself with Siegfried choosing to die too, followed by an apotheosis, instead of the lovers drowning at the hand of the stepmother. The ballet went from four acts to three (act 2 became act 1, scene 2). Riccardo Drigo revised the score with Modest''s approval.'
+  article_refs:
+  - Swan Lake - Petipa-Ivanov-Drigo revival of 1895
+  - Swan Lake - 1877 libretto synopsis
+  contexts:
+  - Riccardo Drigo revised the score, after receiving approval from Tchaikovsky's younger brother, Modest. There are major differences between Drigo's and Tchaikovsky's scores. Today, it is Drigo's revision, and not Tchaikovsky's original score of 1877, that most ballet companies use.
+  - 'Modest Tchaikovsky was called upon to make changes to the ballet''s libretto, including the character of Odette changing from a fairy swan-maiden into a cursed mortal woman, the ballet''s villain changing from Odette''s stepmother to the magician von Rothbart, and the ballet''s finale: instead of the lovers simply drowning at the hand of Odette''s stepmother as in the original 1877 scenario, Odette dies by drowning herself, with Prince Siegfried choosing to die as well, rather than live without her, and soon the lovers'' spirits are reunited in an apotheosis. Aside from the revision of the libretto the ballet was changed from four acts to three—with act 2 becoming act 1, scene 2.'
+  - Her stepmother still wants to kill her and stalks her in the form of an owl, but she has a crown which protects her from harm. [...] The lake rises from the storm and drowns them.
+  adversarial: false
+- id: ts2_medium_06
+  test_set: 2
+  answer_type: medium
+  difficulty: medium
+  question: Among the six internationally recognized ballet teaching methods, which one emerged from Russian ballet, and which traditions does it fuse and derive from?
+  answer: It is the Vaganova method, created by Agrippina Vaganova. It fuses the classical French style (specifically elements from the Romantic era) with the athleticism of the Italian Cecchetti method and the soulful passion of Russian ballet, and it derives from the teachings of Marius Petipa.
+  ground_truth: The Vaganova method, which fuses the classical French style (Romantic-era elements) with the athleticism of the Italian (Cecchetti) method and the soulful passion of Russian ballet, and which was derived from the teachings of Marius Petipa.
+  article_refs:
+  - Ballet - Technical methods of ballet instruction
+  - Ballet - Vaganova method
+  - Vaganova method - Introduction
+  contexts:
+  - There are six widely used, internationally recognized methods to teach or study ballet. These methods are the French School, the Vaganova Method, the Cecchetti Method, the Bournonville method, the Royal Academy of Dance method (English style), and the Balanchine method (American style).
+  - The Vaganova method is a style of ballet training that emerged from Russian ballet, created by Agrippina Vaganova. [...] This method is marked by the fusion of the classical French style, specifically elements from the Romantic era, with the athleticism of the Italian method, and the soulful passion of Russian ballet.
+  - It was derived from the teachings of the Premier Maître de Ballet Marius Petipa, throughout the late 19th century. [...] The method fuses elements of traditional French style from the romantic era with the athleticism and virtuosity of Italian Cecchetti technique.
+  adversarial: false
+- id: ts2_medium_07
+  test_set: 2
+  answer_type: medium
+  difficulty: hard
+  question: Which choreographer is the link between the teachings that originated the Vaganova method and the 1895 revival of Swan Lake, and which parts of the ballet did he stage?
+  answer: Marius Petipa. The Vaganova method was derived from Petipa's teachings, and for the 1895 revival of Swan Lake Petipa staged acts 1 and 3, while Lev Ivanov retained his choreography for act 2 and choreographed act 4.
+  ground_truth: 'Marius Petipa: the Vaganova method derives from his teachings, and in the 1895 Swan Lake revival he staged acts 1 and 3 (with Lev Ivanov doing acts 2 and 4).'
+  article_refs:
+  - Vaganova method - Introduction
+  - Swan Lake - Petipa-Ivanov-Drigo revival of 1895
+  - Swan Lake - St. Petersburg première
+  contexts:
+  - It was derived from the teachings of the Premier Maître de Ballet Marius Petipa, throughout the late 19th century.
+  - Ivanov and Petipa collaborated on the production, with Ivanov retaining his dances for the second act while choreographing the fourth, with Petipa staging the first and third acts.
+  - 'Balletmaster: Marius Petipa (acts 1 & 3), Lev Ivanov (acts 2 & 4)'
+  adversarial: false
+- id: ts2_long_08
+  test_set: 2
+  answer_type: long
+  difficulty: hard
+  question: How does Swan Lake relate to the Romantic ballet tradition described in the Ballet article, even though it is presented as an example of classical ballet?
+  answer: 'The Ballet article lists Swan Lake among classical ballet productions, together with The Sleeping Beauty and The Nutcracker. Romantic ballet, by contrast, was an early-to-mid nineteenth-century movement whose plots often revolved around spirit women (sylphs, wilis, ghosts) who enslaved the hearts of mortal men, with Giselle often considered the most celebrated Romantic ballet. The Swan Lake article shows several links to that tradition: the swan maidens may be variations of the wilis and sylphs common in Romantic ballets; Siegfried resembles Albrecht from Giselle, as both are deceived into betraying their beloved; and Tchaikovsky most admired Adolphe Adam''s 1844 score for Giselle, whose leitmotif technique he used in Swan Lake. Swan Lake therefore inherits Romantic themes and devices while belonging to the later classical repertoire.'
+  ground_truth: 'Swan Lake is classed as classical ballet (alongside The Sleeping Beauty and The Nutcracker) but draws on Romantic ballet: its swan maidens may be variations of the wilis and sylphs of Romantic ballets (spirit women who enslaved mortal men), Siegfried resembles Albrecht from Giselle (the most celebrated Romantic ballet), and Tchaikovsky admired Adam''s Giselle score and used its leitmotif technique.'
+  article_refs:
+  - Ballet - Classical ballet
+  - Ballet - Romantic ballet
+  - Swan Lake - Origins of the ballet
+  - Swan Lake - Tchaikovsky's influences
+  contexts:
+  - 'Some examples of classical ballet productions are: Swan Lake, The Sleeping Beauty and The Nutcracker.'
+  - The plots of many romantic ballets revolved around spirit women (sylphs, wilis, and ghosts) who enslaved the hearts and senses of mortal men. [...] Jules Perrot is also known for his choreography, especially that of Giselle, often considered to be the most widely celebrated romantic ballet.
+  - Siegfried's character resembles Albrecht from Giselle, as both are deceived into betraying their beloved, and the ball to choose a bride appears in La fille du Danube. The swan maidens may be variations of the wilis and sylphs common in Romantic ballets.
+  - 'Tchaikovsky most admired Adam''s 1844 score for Giselle, which used the Leitmotif technique: associating certain themes with certain characters or moods, a technique he would use in Swan Lake and, later, The Sleeping Beauty.'
+  adversarial: false
+- id: ts2_long_09
+  test_set: 2
+  answer_type: long
+  difficulty: hard
+  question: What health-related concerns about ballet training are raised in the Vaganova method article and in the Ballet article, and how do the two relate?
+  answer: 'The Vaganova method article reports a criticism that the method overemphasizes perfection of physical conditioning, leading to training environments that promote anorexia and other unhealthy behavior. The Ballet article''s health effects section is consistent with this: eating disorders are thought to be common among ballet dancers, and a 2014 meta-analysis suggests dancers are at higher risk than the general population for several kinds of eating disorders. It also mentions other physical risks, such as stress fractures of the first rib in teenage girl dancers, posterior ankle impingement syndrome, and lower bone mineral density in the arms. Overall, the Vaganova criticism is a specific instance (a particular training system) of the broader health risks documented for ballet.'
+  ground_truth: 'Vaganova method: criticized for overemphasizing perfection of physical conditioning, fostering training environments that promote anorexia and other unhealthy behavior. Ballet: eating disorders are thought to be common, with a 2014 meta-analysis indicating higher risk than the general population; also first-rib stress fractures in teenage girls, posterior ankle impingement syndrome and lower arm bone mineral density.'
+  article_refs:
+  - Vaganova method - Criticism
+  - Ballet - Health effects
+  contexts:
+  - One criticism is that it overemphasizes perfection of physical conditioning, leading to training environments that promote anorexia and other unhealthy behavior.
+  - Teenage girl ballet dancers are prone to stress fractures in the first rib. Posterior ankle impingement syndrome (PAIS) most commonly affects people who perform repetitive plantar flexion, such as ballet dancers. Eating disorders are thought to be common, and a 2014 meta-analysis suggests that studies do indicate that ballet dancers are at higher risk than the general population for several kinds of eating disorders. In addition, some researchers have noted that intensive training in ballet results in lower bone mineral density in the arms.
+  adversarial: false
+- id: ts2_short_10
+  test_set: 2
+  answer_type: short
+  difficulty: hard
+  question: Why did Agrippina Vaganova choreograph the 1895 revival of Swan Lake at the Mariinsky Theatre?
+  answer: She did not. The documents state that the 1895 revival was choreographed by Marius Petipa (acts 1 and 3) and Lev Ivanov (acts 2 and 4). Vaganova only graduated from the Imperial Ballet School in 1897 and is known as the creator of the Vaganova training method, not as a choreographer of this revival.
+  ground_truth: 'The premise is false: the 1895 Swan Lake revival was choreographed by Marius Petipa and Lev Ivanov, not by Agrippina Vaganova, who graduated in 1897 and is known for the Vaganova training method.'
+  article_refs:
+  - Swan Lake - Petipa-Ivanov-Drigo revival of 1895
+  - Vaganova method - History
+  contexts:
+  - Ivanov and Petipa collaborated on the production, with Ivanov retaining his dances for the second act while choreographing the fourth, with Petipa staging the first and third acts.
+  - Upon graduating from the Imperial Ballet School in Saint Petersburg in 1897, Agrippina Vaganova began dancing with the school's associated professional company, the Imperial Russian Ballet.
+  adversarial: true
