@@ -60,6 +60,7 @@ def generate_agentic_metadata(llm, text, en):
 # --- 2. ESTRAZIONE E CHUNKING ---
 def run_agentic_enrich_chunking(docs, model=None, is_eng=False):
     from tqdm import tqdm
+    from langchain_core.documents import Document
     from utils.model_factories import create_model_by_name
     from langchain_text_splitters import RecursiveCharacterTextSplitter
     
@@ -84,7 +85,12 @@ def run_agentic_enrich_chunking(docs, model=None, is_eng=False):
         separators=["\nArticle ", "\n\n", ". "]
     ).split_text)
 
-    chunks = document_aware_splitter(docs)
+    splitter_input = (
+        [Document(page_content=docs, metadata={})]
+        if isinstance(docs, str)
+        else docs
+    )
+    chunks = document_aware_splitter(splitter_input)
     
     # Ciclo Agentico: chiediamo a Ollama di "capire" ogni chunk
     for chunk_doc in tqdm(chunks, desc="Enriching chunks"):
